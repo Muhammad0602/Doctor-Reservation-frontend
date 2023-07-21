@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { getDoctors } from '../redux/doctors/doctorsSlice';
+import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 function Home() {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
+  console.log(doctors)
   const dispatch = useDispatch();
 
-//   useEffect(() => {
-//     dispatch(getDoctors());
-//   }, [dispatch]);
+  useEffect(() => {
+    dispatch(getDoctors());
+  }, [dispatch]);
 
   if (isLoading) {
     return (

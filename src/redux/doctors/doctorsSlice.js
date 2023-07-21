@@ -9,8 +9,8 @@ export const initialState = {
 
 export const getDoctors = createAsyncThunk('doctors/getDoctors', async () => {
   try {
-    const response = await axios.get('api/doctors');
-    return response.data.doctors;
+    const response = await axios.get('http://localhost:3000/api/doctors');
+    return response.data;
   } catch (error) {
     throw error.response.data.error;
   }
