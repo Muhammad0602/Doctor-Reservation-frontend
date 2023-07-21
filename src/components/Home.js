@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getDoctors } from '../redux/doctors/doctorsSlice';
+// import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 function Home() {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getDoctors());
-  }, [dispatch]);
+//   useEffect(() => {
+//     dispatch(getDoctors());
+//   }, [dispatch]);
 
   if (isLoading) {
     return (
@@ -31,3 +31,5 @@ function Home() {
     <h1>Hello I am the home page</h1>
   )
 }
+
+export default Home;
