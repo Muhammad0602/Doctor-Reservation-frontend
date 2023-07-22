@@ -59,8 +59,8 @@ a {
 
 .sidebar-link:hover {
   opacity: 0.8;
-  transition: all 0.25s ease;
-  background: rgb(151, 191, 15);
+  transition: all 0.5s ease;
+  background: rgba(150, 191, 15, 0.493);
   cursor: pointer;
   border-radius: 0.2rem;
 }
@@ -78,10 +78,11 @@ small {
 }
 
 .active {
-  opacity: 1;
-  visibility: visible;
+  opacity: 0.8;
   transition: all 0.25s ease;
-  transform: translateX(0);
+  background: rgb(151, 191, 15);
+  cursor: pointer;
+  border-radius: 0.2rem;
 }
 
 .sidebar_socials {
