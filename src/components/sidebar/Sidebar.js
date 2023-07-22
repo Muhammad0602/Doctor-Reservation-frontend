@@ -7,7 +7,7 @@ import { TiSocialGooglePlus } from 'react-icons/ti';
 import './sidebar.css';
 
 const Sidebar = () => {
-  const [activeNav, setActiveNav] = useState('home');
+  const [activeNav, setActiveNav] = useState('/');
   return (
     <div className="sidebar_container flex">
       <div className="sidebar_container-uperhead flex">
