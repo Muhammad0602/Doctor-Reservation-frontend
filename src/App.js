@@ -21,9 +21,9 @@ function App() {
         <Route index element={<Login />} />
         <Route path="home" element={<Home />} />
         <Route path="adddoctor" element={<AddDcotor />} />
-        <Route path='deldoctor' element={<DelDoctor />} />
-        <Route path='reserveform' element={<Reserv />} />
-        <Route path='myreservations' element={<Reservation />} />
+        <Route path="deldoctor" element={<DelDoctor />} />
+        <Route path="reserveform" element={<Reserv />} />
+        <Route path="myreservations" element={<Reservation />} />
       </Routes>
     </BrowserRouter>
   );
