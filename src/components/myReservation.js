@@ -19,3 +19,14 @@ const MyReservation = () => {
   const handleDoctorChange = (e) => {
     setDoctor(Number(e.target.value));
   };
+
+  const handleDelete = async (reservationId) => {
+    try {
+      // Dispatch the deleteReserve action to delete the reservation
+      await dispatch(deleteReserve(reservationId));
+      alert("Reservation deleted successfully!");
+    } catch (error) {
+      alert("Error occurred while deleting the reservation.");
+      console.error(error);
+    }
+  };
