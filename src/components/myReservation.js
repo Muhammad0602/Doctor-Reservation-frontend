@@ -10,9 +10,12 @@ const MyReservation = () => {
     dispatch(getReserve());
   }, [dispatch]);
 
-  const Doctors = useSelector((state) => state.Reservation.reservations);
+  const reservations = useSelector((state) => state.Reservation.reservations);
 
   const [buttondis, setButtondis] = useState(false);
   const [prevdis, setPrevdis] = useState(false);
   const [doctor, setDoctor] = useState(1);
   
+  const handleDoctorChange = (e) => {
+    setDoctor(Number(e.target.value));
+  };
