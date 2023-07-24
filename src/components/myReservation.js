@@ -30,3 +30,14 @@ const MyReservation = () => {
       console.error(error);
     }
   };
+
+  return (
+    <div>
+      <h1>My Reservations</h1>
+      <div>
+        <label>Filter by Doctor:</label>
+        <select value={doctor} onChange={handleDoctorChange}>
+          <option value={1}>Doctor 1</option>
+          <option value={2}>Doctor 2</option>
+        </select>
+      </div>
