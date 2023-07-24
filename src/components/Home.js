@@ -31,7 +31,7 @@ function Home() {
     <div className='home-page'>
       {doctors.map(doctor => (
         <div className='doctor-info' key={doctor.id}>
-          <img src={doctor.photo} alt={`${doctor.name} photo`} />
+          <img className='photo' src={doctor.photo} alt={`${doctor.name} photo`} />
           <h2>{doctor.name}</h2>
           <p>{doctor.about}</p>
           <p>Buy one hour of time with only ${doctor.price_hour}</p>
