@@ -52,3 +52,12 @@ const MyReservation = () => {
           </li>
         ))}
       </ul>
+      {reservations.length === 0 && <p>No reservations found.</p>}
+      <div>
+        <Link to="/">Back to Home</Link>
+      </div>
+    </div>
+  );
+};
+
+export default MyReservation;
