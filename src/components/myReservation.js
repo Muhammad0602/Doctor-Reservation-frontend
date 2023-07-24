@@ -41,3 +41,14 @@ const MyReservation = () => {
           <option value={2}>Doctor 2</option>
         </select>
       </div>
+      <ul>
+        {reservations.map((reservation) => (
+          <li key={reservation.id}>
+            <p>Doctor: {reservation.doctorName}</p>
+            <p>City: {reservation.city}</p>
+            <p>Date: {reservation.date}</p>
+            <p>Time: {reservation.time}</p>
+            <button onClick={() => handleDelete(reservation.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
