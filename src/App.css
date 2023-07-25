@@ -29,3 +29,12 @@ body {
   border: 1px solid rgb(14, 10, 10);
   border-radius: 50%;
 }
+
+.flex {
+  display: flex;
+}
+
+#root {
+  display: flex;
+  gap: 1rem;
+}
