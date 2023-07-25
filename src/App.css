@@ -53,7 +53,7 @@ body {
   padding: 20px;
 }
 
-.doctor-info {
+.deldoc-info {
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 10px;
@@ -66,11 +66,11 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-.doctor-info:hover {
+.deldoc-info:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-delDoc-name {
+.deldoc-name {
   margin: 0;
 }
 
