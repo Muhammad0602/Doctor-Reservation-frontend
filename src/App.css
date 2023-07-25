@@ -34,7 +34,7 @@ body {
   display: flex;
 }
 
-#root {
+.app {
   display: flex;
   gap: 1rem;
 }
