@@ -35,8 +35,8 @@ function DeleteDoctor() {
       {doctors.map((doctor) => (
         <div className="doctor-info" key={doctor.id}>
           <img className="photo" src={doctor.photo} alt={doctor.name} />
-          <h2 className='delDoc-name'>{doctor.name}</h2>
-          <button className="delete-btn" onClick={() => handleDeleteDoctor(doctor.id)}>Delete</button>
+          <h2 className="delDoc-name">{doctor.name}</h2>
+          <button type="button" className="delete-btn" onClick={() => handleDeleteDoctor(doctor.id)}>Delete</button>
         </div>
       ))}
     </div>

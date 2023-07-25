@@ -20,11 +20,10 @@ export const deleteDoctor = createAsyncThunk('doctor/deleteDoctor', async (docto
   try {
     await axios.delete(`http://localhost:3000/api/doctors/${doctorId}`);
     return doctorId;
+  } catch (error) {
+    throw error.response.data.error;
   }
-  catch (error) {
-    throw error.response.data.error
-  }
-})
+});
 
 export const doctorsSlice = createSlice({
   name: 'doctors',
@@ -45,7 +44,6 @@ export const doctorsSlice = createSlice({
       }))
       .addCase(deleteDoctor.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteDoctor.fulfilled, (state, action) => {
-        console.log(action)
         const updatedDoctors = state.doctors.filter((doctor) => doctor.id !== action.payload);
         return {
           ...state,
@@ -60,6 +58,5 @@ export const doctorsSlice = createSlice({
       }));
   },
 });
-
 
 export default doctorsSlice.reducer;
