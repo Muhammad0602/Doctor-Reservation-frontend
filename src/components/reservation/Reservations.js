@@ -1,24 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservations } from '../../redux/reservations/reservationsSlice';
-import { getDoctors } from '../../redux/doctors/doctorsSlice';
 import './reservation.css';
 
 function Reservations() {
-  const reservations = useSelector(
-    (store) => store.reservations,
-  );
-  const doctors = useSelector(
-    (store) => store.doctors,
-  );
-
-  const isLoading = useSelector(
-    (store) => store.isLoading,
-  );
-  const error = useSelector(
-    (store) => store.error,
-  );
-
+  const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -42,18 +28,6 @@ function Reservations() {
     );
   }
 
-  useEffect(() => {
-    dispatch(getDoctors());
-  }, [dispatch]);
-
-  if (isLoading) {
-    return (
-      <div className="loading">
-        <div className="spinner" />
-      </div>
-    );
-  }
-
   if (error) {
     return (
       <div className="error-container">
@@ -64,15 +38,17 @@ function Reservations() {
   }
 
   return (
-    
+
     <div className="reservation-page flex">
       {reservations.map((reservation) => (
         <div className="reservation-info flex" key={reservation.id}>
-          <tr>
-            <th>{reservation.appointment_time}</th>
-            <th>{reservation.doctor_id}</th>
-            <th>{reservation.patient_id}</th>
-          </tr>
+          <img className="photo" src={reservation.photo} alt={reservation.name} />
+          <h1>{reservation.doctor}</h1>
+          <h3>
+            {reservation.city}
+            Kabul
+          </h3>
+          <p>{reservation.appointment_time}</p>
         </div>
       ))}
 

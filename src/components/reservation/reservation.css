@@ -3,7 +3,6 @@ body {
 }
 
 .reservation-page {
-  flex-direction: column;
   width: 100%;
   justify-content: center;
   padding: 1rem;
@@ -12,8 +11,14 @@ body {
 
 .reservation-info {
   flex-direction: column;
-  justify-content: space-between;
   padding: 1rem;
   align-items: center;
-  gap: 1rem;
+}
+
+.photo {
+  width: 150px;
+  height: 150px;
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
 }
