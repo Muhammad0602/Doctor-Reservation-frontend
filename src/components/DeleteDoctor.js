@@ -4,7 +4,6 @@ import { deleteDoctor, getDoctors } from '../redux/doctors/doctorsSlice';
 
 function DeleteDoctor() {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
-  console.log(doctors)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,12 +32,11 @@ function DeleteDoctor() {
   }
   return (
     <div className="delete-doctor">
-        <h1>Delete me if you want</h1>
       {doctors.map((doctor) => (
         <div className="doctor-info" key={doctor.id}>
           <img className="photo" src={doctor.photo} alt={doctor.name} />
-          <h2>{doctor.name}</h2>
-          <button onClick={() => handleDeleteDoctor(doctor.id)}>Delete</button>
+          <h2 className='delDoc-name'>{doctor.name}</h2>
+          <button className="delete-btn" onClick={() => handleDeleteDoctor(doctor.id)}>Delete</button>
         </div>
       ))}
     </div>
