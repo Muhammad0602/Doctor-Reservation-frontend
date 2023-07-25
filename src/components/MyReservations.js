@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteReserve, getReserve } from "../redux/reservations/ReservationSlice";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteReserve, getReserve } from '../redux/reservations/ReservationSlice';
 
 const MyReservation = () => {
   const dispatch = useDispatch();
@@ -22,9 +22,9 @@ const MyReservation = () => {
     try {
       // Dispatch the deleteReserve action to delete the reservation
       await dispatch(deleteReserve(reservationId));
-      alert("Reservation deleted successfully!");
+      alert('Reservation deleted successfully!');
     } catch (error) {
-      alert("Error occurred while deleting the reservation.");
+      alert('Error occurred while deleting the reservation.');
       console.error(error);
     }
   };
@@ -33,7 +33,7 @@ const MyReservation = () => {
     <div>
       <h1>My Reservations</h1>
       <div>
-        <label>Filter by Doctor:</label>
+        <h3>Filter by Doctor:</h3>
         <select value={doctor} onChange={handleDoctorChange}>
           <option value={1}>Doctor 1</option>
           <option value={2}>Doctor 2</option>
@@ -42,11 +42,20 @@ const MyReservation = () => {
       <ul>
         {reservations.map((reservation) => (
           <li key={reservation.id}>
-            <p>Doctor: {reservation.doctorName}</p>
-            <p>City: {reservation.city}</p>
-            <p>Date: {reservation.date}</p>
-            <p>Time: {reservation.time}</p>
-            <button onClick={() => handleDelete(reservation.id)}>Delete</button>
+            <p>
+              Doctor:
+              {reservation.doctorName}
+            </p>
+            {/* <p>City: {reservation.city}</p> */}
+            <p>
+              Date:
+              {reservation.date}
+            </p>
+            <p>
+              Time:
+              {reservation.appointment_time}
+            </p>
+            <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
           </li>
         ))}
       </ul>

@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { createReserve } from "../redux/reservations/ReservationSlice";
-import { getDoctors } from "../redux/doctors/DoctorSlice";
-
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { createReserve } from '../redux/reservations/ReservationSlice';
+import { getDoctors } from '../redux/doctors/DoctorSlice';
 
 const Reservation = () => {
   const doctors = useSelector((state) => state.Doctor.doctors);
-  const storage = localStorage.getItem("token");
+  const storage = localStorage.getItem('token');
   const patient = JSON.parse(storage);
 
   const navigate = useNavigate();
@@ -35,10 +34,12 @@ const Reservation = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    const { city, date, time, doctor } = reserve;
+    const {
+      city, date, time, doctor,
+    } = reserve;
 
     if (!city || !date || !time || !doctor) {
-      alert("Please fill in all the required fields.");
+      alert('Please fill in all the required fields.');
       return;
     }
 
@@ -50,10 +51,11 @@ const Reservation = () => {
 
       // Dispatch the createReserve action to make the reservation request
       await dispatch(createReserve(payload));
-      alert("Reservation created successfully!");
+      alert('Reservation created successfully!');
       navigate('/reserve'); // Redirect to the reserve page after successful reservation
     } catch (error) {
-      alert("Error occurred while making a reservation.");
+      alert('Error occurred while making a reservation.');
+      alert('Error occurred while making a reservation.');
       console.error(error);
     }
   };
@@ -64,20 +66,16 @@ const Reservation = () => {
       <form onSubmit={submit}>
         <div>
           <h2>Make a reservation with us</h2>
-          <label>City:</label>
-          <input type="text" name="city" value={reserve.city} onChange={handleInputChange} />
+          <input type="text" name="city" value={reserve.city} onChange={handleInputChange} placeholder="City" />
         </div>
         <div>
-          <label>Date:</label>
-          <input type="date" name="date" value={reserve.date} onChange={handleInputChange} />
+          <input type="date" name="date" value={reserve.date} onChange={handleInputChange} placeholder="Date" />
         </div>
         <div>
-          <label>Time:</label>
-          <input type="time" name="time" value={reserve.time} onChange={handleInputChange} />
+          <input type="time" name="time" value={reserve.time} onChange={handleInputChange} placeholder="Time" />
         </div>
         <div>
-          <label>Doctor:</label>
-          <select name="doctor" value={reserve.doctor} onChange={handleInputChange}>
+          <select name="doctor" value={reserve.doctor} onChange={handleInputChange} placeholder="Select a doctor">
             <option value="">Select a doctor</option>
             {doctors.map((doctor) => (
               <option key={doctor.id} value={doctor.id}>
