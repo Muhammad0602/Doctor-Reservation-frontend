@@ -88,6 +88,15 @@ delDoc-name {
   background-color: #d32f2f;
 }
 
+.flex {
+  display: flex;
+}
+
+#root {
+  display: flex;
+  gap: 1rem;
+}
+
 @keyframes load {
   0% {
     border-right-color: rgb(27, 194, 12);
@@ -102,3 +111,4 @@ delDoc-name {
     border-right-color: rgb(221, 214, 18);
   }
 }
+
