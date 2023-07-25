@@ -23,7 +23,7 @@ function App() {
         <Route path="adddoctor" element={<AddDcotor />} />
         <Route path="deldoctor" element={<DelDoctor />} />
         <Route path="reserveform" element={<Reserv />} />
-        <Route path="myreservations" element={<Reservation />} />
+        <Route path="myreservations" element={<Reservations />} />
       </Routes>
     </BrowserRouter>
   );
