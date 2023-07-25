@@ -9,8 +9,17 @@ export const initialState = {
 
 export const getDoctors = createAsyncThunk('doctors/getDoctors', async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/doctors/${payload}');
+    const response = await axios.get('http://localhost:3000/api/doctors');
     return response.data;
+  } catch (error) {
+    throw error.response.data.error;
+  }
+});
+
+export const getDoctor = createAsyncThunk('doctors/getDoctor', async (doctorId) => {
+  try {
+    await axios.get('http://localhost:3000/api/doctors${doctorId}');
+    return doctorId;
   } catch (error) {
     throw error.response.data.error;
   }
@@ -32,8 +41,18 @@ export const doctorsSlice = createSlice({
         ...state,
         isLoading: false,
         error: action.payload,
-      }));
-  },
+      }))
+
+    .addCase(getDoctor.pending, (state) => ({ ...state, isLoading: true }))
+    .addCase(getDoctor.fulfilled, (state, action) => {
+      const doctor = state.doctors.find((doctor) => doctor.id === action.payload);
+      return {
+        ...state,
+        isLoading: false,
+        doctors: doctor,
+      };
+    }
+  )},
 });
 
 export default doctorsSlice.reducer;
