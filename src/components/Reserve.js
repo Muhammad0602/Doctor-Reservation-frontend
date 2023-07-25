@@ -5,7 +5,7 @@ import { createReserve } from '../redux/reservations/ReservationSlice';
 import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 const Reservation = () => {
-  const doctors = useSelector((state) => state.Doctor.doctors);
+  const doctors = useSelector((state) => state.doctors.doctors);
   const storage = localStorage.getItem('token');
   const patient = JSON.parse(storage);
 
@@ -17,7 +17,7 @@ const Reservation = () => {
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
-    patient_id: patient.id || '',
+    // patient_id: patient.id || '',
     city: '',
     date: '',
     time: '',
@@ -50,11 +50,10 @@ const Reservation = () => {
       };
 
       // Dispatch the createReserve action to make the reservation request
-      await dispatch(createReserve(payload));
+      dispatch(createReserve(payload));
       alert('Reservation created successfully!');
       navigate('/reserve'); // Redirect to the reserve page after successful reservation
     } catch (error) {
-      alert('Error occurred while making a reservation.');
       alert('Error occurred while making a reservation.');
       console.error(error);
     }
