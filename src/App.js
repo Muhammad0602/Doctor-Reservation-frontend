@@ -1,5 +1,9 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom';
 import './App.css';
 import Sidebar from './components/sidebar/Sidebar';
 import Home from './components/home/Home';
@@ -11,7 +15,7 @@ import Reservations from './components/reservation/Reservations';
 
 function App() {
   return (
-    <div className="app">
+    <BrowserRouter>
       <Sidebar />
       <Routes>
         <Route index element={<Login />} />
@@ -19,9 +23,9 @@ function App() {
         <Route path="adddoctor" element={<AddDcotor />} />
         <Route path="deldoctor" element={<DelDoctor />} />
         <Route path="reserveform" element={<Reserv />} />
-        <Route path="myreservations" element={<Reservations />} />
+        <Route path="myreservations" element={<Reservation />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
 
