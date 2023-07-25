@@ -1,16 +1,26 @@
-import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
+import React from 'react';
+import {
+  Routes,
+  Route,
+} from 'react-router-dom';
 import './App.css';
 import DeleteDoctor from './components/DeleteDoctor';
+import Login from './components/Login';
+import AddDcotor from './components/AddDoctor';
+import Reserv from './components/Reserv';
+import Reservation from './components/Reservation';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/delete" element={<DeleteDoctor />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route index element={<Login />} />
+      <Route path="home" element={<Home />} />
+      <Route path="delete" element={<DeleteDoctor />} />
+      <Route path="adddoctor" element={<AddDcotor />} />
+      <Route path="reserveform" element={<Reserv />} />
+      <Route path="myreservations" element={<Reservation />} />
+    </Routes>
   );
 }
 
