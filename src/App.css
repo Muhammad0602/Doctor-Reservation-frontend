@@ -1,5 +1,33 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.home-page {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.home-page .doctor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0.5rem;
+}
+
+.doctor-info .photo {
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgb(14, 10, 10);
+  border-radius: 50%;
 }
 
 .flex {
