@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createReserve } from '../redux/reservations/ReservationSlice';
-import { getDoctors } from '../redux/doctors/DoctorSlice';
+import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 const Reservation = () => {
   const doctors = useSelector((state) => state.Doctor.doctors);
