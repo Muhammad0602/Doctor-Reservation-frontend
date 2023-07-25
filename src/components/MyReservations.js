@@ -46,7 +46,10 @@ const MyReservation = () => {
               Doctor:
               {reservation.doctorName}
             </p>
-            {/* <p>City: {reservation.city}</p> */}
+            <p>
+              City:
+              {reservation.city}
+            </p>
             <p>
               Date:
               {reservation.date}
