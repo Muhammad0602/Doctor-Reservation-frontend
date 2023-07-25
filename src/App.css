@@ -67,7 +67,16 @@ body {
 }
 
 .deldoc-info:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Updated values */
+  transition: box-shadow 0.5s ease;
+}
+
+.deldoc-info .photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .deldoc-name {
