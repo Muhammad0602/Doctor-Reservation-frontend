@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDoctors } from '../redux/doctors/doctorsSlice';
+import { getDoctor } from '../redux/doctors/doctorsSlice';
 
 const DoctorDetails = () => {
   const dispatch = useDispatch();
   const { doctorId } = useParams();
 
   useEffect(() => {
-    dispatch(getDoctors(doctorId));
+    dispatch(getDoctor(doctorId));
   }, [dispatch, doctorId]);
 
-  const doctor = useSelector((state) => state.doctors.doctors);
+  const doctor = useSelector((state) => state.doctors.doctor);
 
   return (
     <section className="container">

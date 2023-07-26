@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const initialState = {
   doctors: [],
+  doctor: [],
   isLoading: false,
   error: '',
 };
@@ -44,14 +45,11 @@ export const doctorsSlice = createSlice({
       }))
 
       .addCase(getDoctor.pending, (state) => ({ ...state, isLoading: true }))
-      .addCase(getDoctor.fulfilled, (state, action) => {
-        const doctor = state.doctors.find((doctor) => doctor.id === action.payload);
-        return {
-          ...state,
-          isLoading: false,
-          doctors: doctor,
-        };
-      });
+      .addCase(getDoctor.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        doctor: action.payload,
+      }));
   },
 });
 
