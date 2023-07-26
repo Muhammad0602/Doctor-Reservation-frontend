@@ -8,7 +8,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .login-page h2 {
@@ -18,9 +17,8 @@ body {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #000; 
+  color: #000;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  
 }
 
 .login-container {
