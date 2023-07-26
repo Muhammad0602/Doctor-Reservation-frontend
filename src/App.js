@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
 import Sidebar from './components/sidebar/Sidebar';
 import Home from './components/home/Home';
 import Login from './components/loginpage/Login';
@@ -14,11 +15,17 @@ import Reserv from './components/reserve/Reserv';
 import Reservation from './components/reservation/Reservation';
 
 function App() {
+  const token = localStorage.getItem('token');
+  if (token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  }
   return (
     <BrowserRouter>
       <Sidebar />
       <Routes>
-        <Route index element={<Login />} />
+        {/* <Route index element={<Login />} /> */}
+        {/* <Route path="/signup" component={Signup} /> */}
+        <Route path="/login" component={<Login />} />
         <Route path="home" element={<Home />} />
         <Route path="adddoctor" element={<AddDcotor />} />
         <Route path="deldoctor" element={<DelDoctor />} />
