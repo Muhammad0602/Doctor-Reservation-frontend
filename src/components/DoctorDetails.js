@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDoctor } from '../redux/doctors/doctorsSlice';
+import './componentsCss/details.css';
 
 const DoctorDetails = () => {
   const dispatch = useDispatch();
@@ -15,12 +16,15 @@ const DoctorDetails = () => {
 
   return (
     <section className="container">
-      <div className="dimg">
+      <div className="dimg-desktop">
         <img src={doctor.photo} alt={doctor.name} crossOrigin="anonymous | use-credentias" />
       </div>
       <div className="dinfo">
         <div className="dwrap">
           <h1>{doctor.name}</h1>
+        </div>
+        <div className="dimg-mobile">
+          <img src={doctor.photo} alt={doctor.name} crossOrigin="anonymous | use-credentias" />
         </div>
         <ul>
           <li>
@@ -28,7 +32,7 @@ const DoctorDetails = () => {
             {doctor.price}
           </li>
           <li>
-            About
+            About:
 
             {doctor.about}
           </li>
@@ -44,8 +48,8 @@ const DoctorDetails = () => {
           </li>
         </ul>
       </div>
-      <button type="button" className="btn">
-        <Link to="/reserve" className="btn">Reserve</Link>
+      <button type="button" className="rbtn">
+        <Link to="/reserve" className="re-btn">Reserve</Link>
       </button>
     </section>
   );

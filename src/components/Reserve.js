@@ -52,7 +52,7 @@ const Reservation = () => {
       // Dispatch the createReserve action to make the reservation request
       dispatch(createReserve(payload));
       alert('Reservation created successfully!');
-      navigate('/reserve'); // Redirect to the reserve page after successful reservation
+      navigate('/my-reservations'); // Redirect to the reservation page after successful reservation
     } catch (error) {
       alert('Error occurred while making a reservation.');
       console.error(error);
@@ -83,7 +83,7 @@ const Reservation = () => {
             ))}
           </select>
         </div>
-        <button type="submit">Reserve Appointment</button>
+        <button type="submit">Reserve</button>
       </form>
     </div>
   );

@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.dimg-desktop {
+  display: none;
+}
+
+.dwrap {
+  font-size: 1rem;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.dimg-mobile {
+  margin: 20px;
+}
+
+.container ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+  list-style-type:none;
+  padding: 10px;
+  font-weight: 540;
+}
+
+.container ul li:nth-child(odd) {
+  background-color: rgb(211, 211, 211);
+}
+
+.rbtn {
+  margin: 20px;
+  background-color: #70BE0D;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+.re-btn {
+  color: #fff;
+  text-decoration: none;
+}
