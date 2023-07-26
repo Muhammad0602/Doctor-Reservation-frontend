@@ -43,3 +43,51 @@
   color: #fff;
   text-decoration: none;
 }
+
+
+/* for desktop */
+
+@media only screen and (min-width: 768px) {
+  .dimg-mobile {
+    display: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px;
+  }
+
+  .dimg-desktop {
+    display: block;
+    margin: 20px;
+    height: 80%;
+    width: 40%;
+  }
+
+  .dwrap {
+    font-size: 1.8rem;
+    text-align: right;
+    margin-top: 60px;
+  }
+
+  .container ul li {
+    font-size: 1.3rem;
+    padding: 17px;
+  }
+
+  .dinfo {
+    width: 25%;
+  }
+
+  .rbtn {
+    padding: 15px 20px 15px 20px;
+    border-radius: 25px;
+    margin-left: 12rem;
+  }
+  
+  .re-btn {
+    font-size: 1.4rem;
+  }
+}

@@ -47,10 +47,10 @@ const DoctorDetails = () => {
             {doctor.speciality}
           </li>
         </ul>
+        <button type="button" className="rbtn">
+          <Link to="/reserve" className="re-btn">Reserve</Link>
+        </button>
       </div>
-      <button type="button" className="rbtn">
-        <Link to="/reserve" className="re-btn">Reserve</Link>
-      </button>
     </section>
   );
 };
