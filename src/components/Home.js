@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 function Home() {
@@ -37,6 +38,7 @@ function Home() {
             Buy one hour of time with only $
             {doctor.price_hour}
           </p>
+          <Link to={`/${doctor.id}`} className="link">{doctor.name}</Link>
         </div>
       ))}
     </div>

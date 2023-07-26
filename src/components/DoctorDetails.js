@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getDoctors } from "../redux/doctors/doctorsSlice";
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 const DoctorDetails = () => {
   const dispatch = useDispatch();
@@ -29,20 +29,17 @@ const DoctorDetails = () => {
           </li>
           <li>
             About
-            {''}
-            {''}
+
             {doctor.about}
           </li>
           <li>
             City:
-            {''}
-            {''}
+
             {doctor.city}
           </li>
           <li>
             Speciality:
-            {''}
-            {''}
+
             {doctor.speciality}
           </li>
         </ul>
