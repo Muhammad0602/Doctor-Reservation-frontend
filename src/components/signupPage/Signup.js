@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signupUser } from '../../redux/users/userSlice';
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const error = useSelector((state) => state.user.error);
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signupUser({ username, full_name: fullName }));
+    if (username && fullName) {
+      dispatch(signupUser({ username, full_name: fullName }));
+    } else {
+      alert('Please fill in all fields');
+    }
     setUsername('');
     setFullName('');
   };
@@ -29,7 +34,7 @@ const Signup = () => {
           />
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
           <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Full Name" />
-          {' '}
+          {error && <p>{error}</p>}
           <button type="submit">Sign Up</button>
         </form>
       </div>
