@@ -1,0 +1,139 @@
+.container-3 {
+  margin: 20px;
+}
+
+.container-3 h1 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+.filter h3{
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.select-option2 {
+  height: 25px;
+  width: 6rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+.container-3 ul li {
+  list-style: none;
+  margin-bottom: 25px;
+  border: solid 1px #000;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.doctor2,
+.city2,
+.date2,
+.time2 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.del {
+  background-color: #70BE0D;
+  text-decoration: none;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  text-align: center;
+  padding: 8px;
+  width: 5rem;
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.back {
+  background-color: #70BE0D;
+  width: 8rem;
+  text-align: center;
+  padding: 7px;
+  border-radius: 25px;
+}
+
+.back a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.no-found {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* for desktop */
+
+@media only screen and (min-width: 768px) {
+
+  .container-3 {
+    margin: 40px;
+  }
+
+  .container-3 h1 {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+
+  .filter h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .select-option2 {
+    height: 40px;
+    width: 9rem;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .container-3 ul li {
+    border: solid 1px #000;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .doctor2,
+  .city2,
+  .date2,
+  .time2 {
+    font-size: 1.5rem;
+  }
+
+  .del {
+    width: 6rem;
+    font-size: 1.3rem;
+  }
+
+  .back {
+    width: 10rem;
+  }
+
+  .back a {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  .no-found {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}

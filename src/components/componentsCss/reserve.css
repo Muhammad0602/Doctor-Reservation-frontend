@@ -78,30 +78,31 @@
   }
 
   .container-2 h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .make-heading h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .city,
   .date,
   .time {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 
   .city input,
   .date input,
   .time input {
     padding: 12px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .select-option {
     height: 40px;
-    width: 12rem;
-    font-size: 1.2rem;
+    width: 13rem;
+    font-size: 1.5rem;
     padding: 5px;
   }
 
