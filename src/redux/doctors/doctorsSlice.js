@@ -16,6 +16,15 @@ export const getDoctors = createAsyncThunk('doctors/getDoctors', async () => {
   }
 });
 
+export const deleteDoctor = createAsyncThunk('doctor/deleteDoctor', async (doctorId) => {
+  try {
+    await axios.delete(`http://localhost:3000/api/doctors/${doctorId}`);
+    return doctorId;
+  } catch (error) {
+    throw error.response.data.error;
+  }
+});
+
 export const doctorsSlice = createSlice({
   name: 'doctors',
   initialState,
@@ -29,6 +38,20 @@ export const doctorsSlice = createSlice({
         doctors: action.payload,
       }))
       .addCase(getDoctors.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      }))
+      .addCase(deleteDoctor.pending, (state) => ({ ...state, isLoading: true }))
+      .addCase(deleteDoctor.fulfilled, (state, action) => {
+        const updatedDoctors = state.doctors.filter((doctor) => doctor.id !== action.payload);
+        return {
+          ...state,
+          isLoading: false,
+          doctors: updatedDoctors,
+        };
+      })
+      .addCase(deleteDoctor.rejected, (state, action) => ({
         ...state,
         isLoading: false,
         error: action.payload,
