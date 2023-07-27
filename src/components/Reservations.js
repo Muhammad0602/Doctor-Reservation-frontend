@@ -1,7 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservations } from '../../redux/reservations/reservationsSlice';
+import { getReservations } from '../redux/reservations/reservationsSlice';
 import './reservation.css';
+
+const formatAppointmentTime = (appointmentTime) => {
+  const date = new Date(appointmentTime);
+  const day = date.getDate();
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${day} ${month}, ${year}`;
+};
 
 function Reservations() {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
@@ -48,7 +61,8 @@ function Reservations() {
             {reservation.city}
             Kabul
           </h3>
-          <p>{reservation.appointment_time}</p>
+          <p>{formatAppointmentTime(reservation.appointment_time)}</p>
+
         </div>
       ))}
 
