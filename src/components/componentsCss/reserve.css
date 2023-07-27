@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", sans-serif;
+  }
+
+.container-2 {
+  padding: 20px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.make-heading h2 {
+  font-size: 1.2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.city,
+.date,
+.time {
+  margin-bottom: 10px;
+}
+
+.city p,
+.date p,
+.time p {
+  margin-bottom: 5px;
+}
+
+.city input,
+.date input,
+.time input {
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.select-option {
+  height: 30px;
+  width: 8rem;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.r-btn {
+  background-color: #70BE0D;
+  text-decoration: none;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  text-align: center;
+  width: 5rem;
+}
+
+.rebtn {
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+/* for desktop */
+
+@media only screen and (min-width: 768px) {
+  .container-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+  }
+
+  .container-2 h1 {
+    font-size: 1.5rem;
+  }
+
+  .make-heading h2 {
+    font-size: 1.3rem;
+  }
+
+  .city,
+  .date,
+  .time {
+    font-size: 1.3rem;
+  }
+
+  .city input,
+  .date input,
+  .time input {
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+
+  .select-option {
+    height: 40px;
+    width: 12rem;
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+
+  .r-btn {
+    padding: 6px;
+    width: 7rem;
+    margin-top: 20px;
+  }
+
+  .rebtn {
+    font-size: 1.4rem;
+  }
+}
