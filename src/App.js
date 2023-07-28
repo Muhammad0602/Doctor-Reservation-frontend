@@ -9,7 +9,7 @@ import DeleteDoctor from './components/DeleteDoctor';
 import Login from './components/Login';
 import AddDcotor from './components/AddDoctor';
 import Reserv from './components/Reserv';
-import Reservation from './components/Reservation';
+import Reservations from './components/Reservations';
 import Home from './components/Home';
 import Sidebar from './components/Sidebar';
 import DoctorDetails from './components/DoctorDetails';
