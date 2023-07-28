@@ -34,7 +34,7 @@
 .city input,
 .date input,
 .time input {
-  padding: 5px;
+  padding: 6px;
   outline: none;
   border-radius: 5px;
   border: 1px solid #000;
