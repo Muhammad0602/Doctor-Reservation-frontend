@@ -38,6 +38,7 @@ body {
 
 .spinner {
   margin-top: 5rem;
+  margin-left: 30rem;
   width: 8rem;
   height: 8rem;
   border: 0.8rem solid aqua;
