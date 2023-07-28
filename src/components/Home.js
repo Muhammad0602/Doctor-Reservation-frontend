@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDoctors } from '../redux/doctors/doctorsSlice';
 import { Link } from 'react-router-dom';
+import { getDoctors } from '../redux/doctors/doctorsSlice';
 
 function Home() {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);

@@ -21,6 +21,10 @@ export const getDoctor = createAsyncThunk('doctors/getDoctor', async (doctorId) 
   try {
     const response = await axios.get(`http://localhost:3000/api/doctors/${doctorId}`);
     return response.data;
+  } catch (error) {
+    throw error.response.data.error;
+  }
+});
 
 export const deleteDoctor = createAsyncThunk('doctor/deleteDoctor', async (doctorId) => {
   try {
@@ -54,6 +58,7 @@ export const doctorsSlice = createSlice({
         ...state,
         isLoading: false,
         doctor: action.payload,
+      }))
 
       .addCase(deleteDoctor.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteDoctor.fulfilled, (state, action) => {
