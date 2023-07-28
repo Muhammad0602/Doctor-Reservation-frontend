@@ -9,25 +9,38 @@ body {
 
 .home-page {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; 
+  overflow-x: auto;
+  margin-top: 10rem;
+  padding: 20px;
 }
 
-.home-page .doctor-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0.5rem;
+.doctor-info {
+  max-width: 300px;
+  height: 350px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .doctor-info .photo {
   width: 150px;
   height: 150px;
-  border: 1px solid rgb(14, 10, 10);
   border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.doctor-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.doctor-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .loading {
