@@ -21,6 +21,11 @@ export const getDoctor = createAsyncThunk('doctors/getDoctor', async (doctorId) 
   try {
     const response = await axios.get(`http://localhost:3000/api/doctors/${doctorId}`);
     return response.data;
+
+export const deleteDoctor = createAsyncThunk('doctor/deleteDoctor', async (doctorId) => {
+  try {
+    await axios.delete(`http://localhost:3000/api/doctors/${doctorId}`);
+    return doctorId;
   } catch (error) {
     throw error.response.data.error;
   }
@@ -49,6 +54,20 @@ export const doctorsSlice = createSlice({
         ...state,
         isLoading: false,
         doctor: action.payload,
+
+      .addCase(deleteDoctor.pending, (state) => ({ ...state, isLoading: true }))
+      .addCase(deleteDoctor.fulfilled, (state, action) => {
+        const updatedDoctors = state.doctors.filter((doctor) => doctor.id !== action.payload);
+        return {
+          ...state,
+          isLoading: false,
+          doctors: updatedDoctors,
+        };
+      })
+      .addCase(deleteDoctor.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        error: action.payload,
       }));
   },
 });

@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDoctors } from '../redux/doctors/doctorsSlice';
-import { Link } from 'react-router-dom';
+import { deleteDoctor, getDoctors } from '../redux/doctors/doctorsSlice';
 
-function Home() {
+function DeleteDoctor() {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getDoctors());
   }, [dispatch]);
+
+  const handleDeleteDoctor = (doctorId) => {
+    dispatch(deleteDoctor(doctorId));
+  };
 
   if (isLoading) {
     return (
@@ -28,21 +31,16 @@ function Home() {
     );
   }
   return (
-    <div className="home-page">
+    <div className="delete-doctor">
       {doctors.map((doctor) => (
-        <div className="doctor-info" key={doctor.id}>
+        <div className="deldoc-info" key={doctor.id}>
           <img className="photo" src={doctor.photo} alt={doctor.name} />
-          <h2>{doctor.name}</h2>
-          <p>{doctor.about}</p>
-          <p>
-            Buy one hour of time with only $
-            {doctor.price_hour}
-          </p>
-          <Link to={`/${doctor.id}`} className="link">{doctor.name}</Link>
+          <h2 className="deldoc-name">{doctor.name}</h2>
+          <button type="button" className="delete-btn" onClick={() => handleDeleteDoctor(doctor.id)}>Delete</button>
         </div>
       ))}
     </div>
   );
 }
 
-export default Home;
+export default DeleteDoctor;
