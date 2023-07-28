@@ -65,7 +65,7 @@
 
   .dimg-desktop img {
     margin: 20px;
-    width: 43rem;
+    width: 44rem;
     height: 40rem;
   }
 
@@ -81,8 +81,8 @@
   }
 
   .container ul li {
-    width: 21rem;
-    margin-left: 60px;
+    width: 20rem;
+    margin-left: 80px;
   }
 
   .dinfo {
