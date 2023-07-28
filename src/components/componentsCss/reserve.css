@@ -1,8 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Trebuchet MS", sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", sans-serif;
+}
 
 .container-2 {
   padding: 20px;
@@ -50,7 +50,7 @@
 }
 
 .r-btn {
-  background-color: #70BE0D;
+  background-color: #70be0d;
   text-decoration: none;
   border-radius: 25px;
   outline: none;
@@ -77,18 +77,9 @@
     margin: 40px;
   }
 
-  .container-2 h1 {
-    font-size: 2rem;
-  }
-
-  .make-heading h2 {
-    font-size: 1.5rem;
-  }
-
   .city,
   .date,
   .time {
-    font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
@@ -96,13 +87,11 @@
   .date input,
   .time input {
     padding: 12px;
-    font-size: 1.5rem;
   }
 
   .select-option {
     height: 40px;
-    width: 13rem;
-    font-size: 1.5rem;
+    width: 11rem;
     padding: 5px;
   }
 

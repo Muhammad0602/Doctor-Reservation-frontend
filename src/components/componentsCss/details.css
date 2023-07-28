@@ -4,6 +4,10 @@
   font-family: "Trebuchet MS", sans-serif;
 }
 
+.sidebar_container {
+  display: none;
+}
+
 .dimg-desktop {
   display: none;
 }
@@ -14,14 +18,16 @@
   margin-top: 20px;
 }
 
-.dimg-mobile {
+.dimg-mobile img {
   margin: 20px;
+  width: 100vw;
+  height: 40vh;
 }
 
 .container ul li {
   margin-left: 20px;
   margin-right: 20px;
-  list-style-type:none;
+  list-style-type: none;
   padding: 10px;
   font-weight: 540;
 }
@@ -32,26 +38,35 @@
 
 .rbtn {
   margin: 20px;
-  background-color: #70BE0D;
+  background-color: #70be0d;
   text-decoration: none;
-  padding: 10px;
+  padding: 4px;
   border-radius: 25px;
   outline: none;
   border: none;
-}
-
-.re-btn {
-  font-size: 1rem;
-  color: #fff;
-  text-decoration: none;
 }
 
 
 /* for desktop */
 
 @media only screen and (min-width: 768px) {
+  .sidebar_container {
+    display: block;
+  }
+
   .dimg-mobile {
     display: none;
+  }
+
+  .dimg-desktop {
+    display: block;
+    margin-top: 7rem;
+  }
+
+  .dimg-desktop img {
+    margin: 20px;
+    width: 43rem;
+    height: 40rem;
   }
 
   .container {
@@ -61,35 +76,26 @@
     margin: 40px;
   }
 
-  .dimg-desktop {
-    display: block;
-    margin: 20px;
-    height: 80%;
-    width: 40%;
-  }
-
   .dwrap {
-    font-size: 1.3rem;
     text-align: right;
-    margin-top: 60px;
   }
 
   .container ul li {
-    font-size: 1.3rem;
-    padding: 17px;
+    width: 21rem;
+    margin-left: 60px;
   }
 
   .dinfo {
-    width: 25%;
+    margin-top: 5rem;
   }
 
   .rbtn {
-    padding: 15px 20px 15px 20px;
+    padding: 5px 10px 5px 10px;
     border-radius: 25px;
-    margin-left: 12rem;
+    margin-left: 20rem;
   }
-  
-  .re-btn {
-    font-size: 1.4rem;
+
+  .rebtn {
+    font-size: 1rem;
   }
 }

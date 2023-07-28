@@ -12,7 +12,7 @@
   margin-bottom: 20px;
 }
 
-.filter h3{
+.filter h3 {
   font-size: 1rem;
   margin-bottom: 10px;
 }
@@ -46,7 +46,7 @@
 }
 
 .del {
-  background-color: #70BE0D;
+  background-color: #70be0d;
   text-decoration: none;
   border-radius: 25px;
   outline: none;
@@ -60,7 +60,7 @@
 }
 
 .back {
-  background-color: #70BE0D;
+  background-color: #70be0d;
   width: 8rem;
   text-align: center;
   padding: 7px;
@@ -80,7 +80,6 @@
 /* for desktop */
 
 @media only screen and (min-width: 768px) {
-
   .container-3 {
     margin: 40px;
   }
