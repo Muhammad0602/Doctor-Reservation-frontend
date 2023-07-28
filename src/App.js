@@ -11,7 +11,7 @@ import AddDcotor from './components/AddDoctor';
 import Reserv from './components/Reserv';
 import Reservation from './components/Reservation';
 import Home from './components/Home';
-import Sidebar from './components/sidebar/Sidebar';
+import Sidebar from './components/Sidebar';
 import DoctorDetails from './components/DoctorDetails';
 import Reserve from './components/Reserve';
 
