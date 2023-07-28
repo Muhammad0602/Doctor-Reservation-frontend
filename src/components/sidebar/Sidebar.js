@@ -20,7 +20,7 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="sidebar-link">
-              <Link onClick={() => setActiveNav('reserveform')} className={activeNav === 'reserveform' ? 'active' : ''} to="/reserveform">
+              <Link onClick={() => setActiveNav('reserve')} className={activeNav === 'reserve' ? 'active' : ''} to="/reserve">
                 Reserve
               </Link>
             </li>
