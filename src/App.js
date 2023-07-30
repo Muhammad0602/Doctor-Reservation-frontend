@@ -26,8 +26,8 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="signup" element={<Signup />} />
-        <Route index element={<Login />} />
-        {/* <Route path="login" element={<Login />} /> */}
+        {/* <Route index element={<Login />} /> */}
+        <Route path="login" element={<Login />} />
         <Route path="home" element={<Private><Home /></Private>} />
         <Route path="adddoctor" element={<Private><AddDcotor /></Private>} />
         <Route path="delete" element={<Private><DeleteDoctor /></Private>} />
