@@ -3,9 +3,9 @@ import { Navigate } from 'react-router';
 import PropTypes from 'prop-types';
 
 function Private({ children }) {
-  const { isAuth } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
 
-  if (!isAuth) {
+  if (!user) {
     return <Navigate to="/login" />;
   }
   return children;
