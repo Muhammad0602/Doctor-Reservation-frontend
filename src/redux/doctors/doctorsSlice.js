@@ -4,8 +4,15 @@ import axios from 'axios';
 export const initialState = {
   doctors: [],
   isLoading: false,
+  status: 'idle',
   error: '',
 };
+
+export const addDoctor = createAsyncThunk('doctor/addDoctor', async (doctorData) => {
+  const response = await axios.post('http://localhost:3000/api/doctors', { ...doctorData, price_hour: doctorData.price });
+  console.log('sdfasf', response.data);
+  return response.data;
+});
 
 export const getDoctors = createAsyncThunk('doctors/getDoctors', async () => {
   try {
@@ -55,7 +62,19 @@ export const doctorsSlice = createSlice({
         ...state,
         isLoading: false,
         error: action.payload,
-      }));
+      }))
+      .addCase(addDoctor.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(addDoctor.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.doctors.push(action.payload);
+        // state.doctors = action.payload.data;
+      })
+      .addCase(addDoctor.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
   },
 });
 
