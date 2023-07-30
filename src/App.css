@@ -8,26 +8,110 @@ body {
 }
 
 .home-page {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100vh;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 200px;
+  padding-left: 600px;
 }
 
-.home-page .doctor-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0.5rem;
+.doctor-info {
+  max-width: 300px;
+  height: 350px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .doctor-info .photo {
   width: 150px;
   height: 150px;
-  border: 1px solid rgb(14, 10, 10);
   border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.doctor-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.doctor-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  margin-top: 5rem;
+  margin-left: 30rem;
+  width: 8rem;
+  height: 8rem;
+  border: 0.8rem solid aqua;
+  border-radius: 50%;
+  border-right-color: rgb(27, 194, 12);
+  animation: load 1s ease-in-out infinite;
+}
+
+.delete-doctor {
+  width: 100%;
+  max-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  overflow-y: auto;
+  column-gap: 2rem;
+}
+
+.deldoc-info {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.deldoc-info:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Updated values */
+  transition: box-shadow 0.5s ease;
+}
+
+.deldoc-info .photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.deldoc-name {
+  margin: 0;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
 }
 
 .flex {
@@ -37,4 +121,19 @@ body {
 #root {
   display: flex;
   gap: 1rem;
+}
+
+@keyframes load {
+  0% {
+    border-right-color: rgb(27, 194, 12);
+  }
+
+  50% {
+    border-right-color: rgb(197, 90, 23);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    border-right-color: rgb(221, 214, 18);
+  }
 }
