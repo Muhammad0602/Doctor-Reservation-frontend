@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservations } from '../redux/reservations/ReservationSlice';
+import { getReservations } from '../redux/reservations/reservationsSlice';
+import './reservation.css';
 
 const formatAppointmentTime = (appointmentTime) => {
   const date = new Date(appointmentTime);

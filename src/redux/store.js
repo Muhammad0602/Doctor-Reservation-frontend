@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import doctorsReducer from './doctors/doctorsSlice';
-import reservationsReducer from './reservations/ReservationSlice';
+import reservationsReducer from './reservations/reservationsSlice';
 
 const store = configureStore({
   reducer: {
