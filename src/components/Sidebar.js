@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Outlet, Link } from 'react-router-dom';
 import {
   FaTwitter, FaFacebookF, FaVine, FaPinterestP,
 } from 'react-icons/fa';
 import { TiSocialGooglePlus } from 'react-icons/ti';
+import { logout } from '../redux/users/userSlice';
 import './sidebar.css';
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   const [activeNav, setActiveNav] = useState('/');
+
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('username');
+    window.location.href = '/home';
+  };
+
   return (
     <div className="sidebar_container flex">
       <div className="sidebar_container-uperhead flex">
@@ -48,6 +58,21 @@ const Sidebar = () => {
               <Link onClick={() => setActiveNav('signup')} className={activeNav === 'signup' ? 'active' : ''} to="/signup">
                 Sign up
               </Link>
+            </li>
+            <li
+              className="sidebar-link"
+              style={{
+                display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+              }}
+            >
+              <lord-icon
+                src="https://cdn.lordicon.com/hcuxerst.json"
+                trigger="hover"
+                colors="primary:#16c72e,secondary:#242424"
+                style={{ width: '60px', height: '60px' }}
+                onClick={handleLogout}
+              />
+              logout
             </li>
           </ul>
         </div>

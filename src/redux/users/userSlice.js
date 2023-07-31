@@ -22,9 +22,12 @@ const userSlice = createSlice({
     user: null,
     status: 'idle',
     error: null,
-    isLoggedIn: false,
   },
   reducers: {
+    logout: (state) => {
+      state.user = '';
+    },
+
   },
   extraReducers: (builder) => {
     builder
@@ -42,7 +45,6 @@ const userSlice = createSlice({
         state.status = 'succeeded';
         state.isLoggedIn = true;
         state.user = action.payload.data;
-        state.username = action.payload.data;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.status = 'failed';
@@ -51,5 +53,5 @@ const userSlice = createSlice({
   },
 });
 
-// export const { logout } = userSlice.actions;
+export const { logout } = userSlice.actions;
 export default userSlice.reducer;
