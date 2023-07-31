@@ -19,3 +19,10 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+@media (max-width: 600px) {
+  .reservation-page{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
