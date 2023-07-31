@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/users/userSlice';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
 
-  useEffect(() => {
-    const savedUsername = localStorage.getItem('username');
-    if (savedUsername) {
-      window.location.href = '/home';
-    }
-  }, []);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(loginUser(username));
+    try {
+      await dispatch(loginUser(username));
+      navigate('/home');
+    } catch (error) {
+      console.log('Login failed');
+    }
   };
 
   return (
@@ -34,8 +34,8 @@ const Login = () => {
           />
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
           <button type="submit">Log In</button>
-
         </form>
+        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
       </div>
     </div>
   );
