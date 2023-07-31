@@ -104,6 +104,9 @@ small {
     background: transparent;
     border: none;
     outline: none;
+    color: rgb(57, 57, 57);
+    font-size: large;
+    padding: 1rem;
   }
 
   .sidebar_container {

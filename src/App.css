@@ -120,3 +120,12 @@ body {
     border-right-color: rgb(221, 214, 18);
   }
 }
+
+@media (max-width: 600px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+  }
+}
