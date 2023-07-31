@@ -22,6 +22,7 @@ a {
   justify-content: space-between;
   width: 200px;
   border-right: 1px solid #0000002f;
+
 }
 
 .sidebar_container-uperhead {
@@ -89,4 +90,31 @@ small {
   display: flex;
   justify-content: space-evenly;
   margin: 20px 30px;
+}
+
+.nav_btn {
+ display: none;
+}
+
+@media  (max-width: 600px){
+  .nav_btn {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .sidebar_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    transform: translateX(-100vh);
+  }
+
+  .responsive {
+    transform: none;
+  }
 }
