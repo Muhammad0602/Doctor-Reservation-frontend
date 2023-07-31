@@ -8,7 +8,7 @@ import './componentsCss/reserve.css';
 const Reservation = () => {
   const doctors = useSelector((state) => state.doctors.doctors);
   const storage = localStorage.getItem('token');
-  const patient = JSON.parse(storage);
+  const user = storage ? JSON.parse (storage): null;
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Reservation = () => {
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
-    // patient_id: patient.id || '',
+    user_id: user?.id || '',
     city: '',
     date: '',
     time: '',
@@ -47,13 +47,13 @@ const Reservation = () => {
     try {
       const payload = {
         ...reserve,
-        patient_id: patient.id,
+        user_id: user.id,
       };
 
       // Dispatch the createReserve action to make the reservation request
       dispatch(createReserve(payload));
       alert('Reservation created successfully!');
-      navigate('/my-reservations'); // Redirect to the reservation page after successful reservation
+      navigate('/myreservations'); // Redirect to the reservation page after successful reservation
     } catch (error) {
       alert('Error occurred while making a reservation.');
       console.error(error);

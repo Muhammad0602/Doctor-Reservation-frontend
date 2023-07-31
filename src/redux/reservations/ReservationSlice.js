@@ -11,7 +11,7 @@ export const createReserve = createAsyncThunk('reserve/createReserve', async (pa
       date: payload.date,
       time: payload.time,
       doctor_id: payload.doctor,
-      patient_id: payload.patient_id,
+      user_id: payload.user_id,
     }),
   });
 
