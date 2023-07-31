@@ -1,14 +1,13 @@
-import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router';
 import PropTypes from 'prop-types';
 
 function Private({ children }) {
-  const { user } = useSelector((state) => state.user);
+  const savedUsername = localStorage.getItem('username');
 
-  if (!user) {
-    return <Navigate to="/login" />;
+  if (savedUsername) {
+    return children;
   }
-  return children;
+  return <Navigate to="/login" />;
 }
 
 Private.propTypes = {

@@ -25,7 +25,6 @@ const userSlice = createSlice({
     isLoggedIn: false,
   },
   reducers: {
-
   },
   extraReducers: (builder) => {
     builder

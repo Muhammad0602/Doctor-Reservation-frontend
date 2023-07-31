@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/users/userSlice';
 import './login.css';
 
 const Login = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
+  useEffect(() => {
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername && isLoggedIn) {
+      window.location.href = '/home';
+    }
+  }, [isLoggedIn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
