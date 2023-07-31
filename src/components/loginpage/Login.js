@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/users/userSlice';
 import './login.css';
@@ -6,6 +6,13 @@ import './login.css';
 const Login = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
+      window.location.href = '/home';
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +34,7 @@ const Login = () => {
           />
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
           <button type="submit">Log In</button>
+
         </form>
       </div>
     </div>
