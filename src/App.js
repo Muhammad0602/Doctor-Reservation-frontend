@@ -15,6 +15,8 @@ import Reserv from './components/Reserv';
 import Reservations from './components/Reservations';
 import Home from './components/Home';
 import Sidebar from './components/Sidebar';
+import DoctorDetails from './components/DoctorDetails';
+import Reserve from './components/Reserve';
 
 function App() {
   const token = localStorage.getItem('token');
@@ -23,7 +25,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <Sidebar />
+    <Sidebar />
       <Routes>
         <Route path="signup" element={<Signup />} />
         {/* <Route index element={<Login />} /> */}
@@ -32,10 +34,12 @@ function App() {
         <Route path="adddoctor" element={<Private><AddDcotor /></Private>} />
         <Route path="delete" element={<Private><DeleteDoctor /></Private>} />
         <Route path="reserveform" element={<Private><Reserv /></Private>} />
-        <Route path="myreservations" element={<Private><Reservations /></Private>} />
+        <Route path="myreservations" element={<Private><Reservation />} />
+        <Route path="/reserve" element={<Reserve />} />
+        <Route path="/:doctorId" element={<DoctorDetails /></Private>} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default App;
+export default App

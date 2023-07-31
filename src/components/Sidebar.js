@@ -48,9 +48,9 @@ const Sidebar = () => {
               </li>
               <li className="sidebar-link">
                 <Link
-                  onClick={() => setActiveNav('reserveform')}
-                  className={activeNav === 'reserveform' ? 'active' : ''}
-                  to="/reserveform"
+                  onClick={() => setActiveNav('reserve')}
+                  className={activeNav === 'reserve' ? 'active' : ''}
+                  to="/reserve"
                 >
                   Reserve
                 </Link>

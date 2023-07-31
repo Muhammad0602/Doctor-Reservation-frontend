@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import doctorsReducer from './doctors/doctorsSlice';
 import userReducer from './users/userSlice';
-import reservationReducer from './reservations/reservationsSlice';
+import reservationsReducer from './reservations/ReservationSlice';
 import localStorageMiddleware from '../middleware/localStorage';
 
 const store = configureStore({
   reducer: {
     doctors: doctorsReducer,
     user: userReducer,
-    reservations: reservationReducer,
+    Reservation: reservationsReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMiddleware),
 });

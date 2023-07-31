@@ -1,0 +1,4 @@
+<select key={doctor.id} value={doctor} onChange={handleDoctorChange}>
+          <option value={doctor.id}>{doctor.name}</option>
+          <option value={doctor.id}>{doctor.name}</option>
+        </select>
