@@ -1,4 +1,3 @@
-// userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -38,7 +37,7 @@ const userSlice = createSlice({
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.status = 'failed';
-        action.error.message = 'We already have this username in the database.';
+        action.error.message = 'This username already exists, kindly choose another one.';
         state.error = action.error.message;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
