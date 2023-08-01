@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDoctor } from '../../redux/doctors/doctorsSlice';
+import { useNavigate } from 'react-router-dom';
 
 const DoctorForm = () => {
   const [name, setName] = useState('');
@@ -8,6 +9,7 @@ const DoctorForm = () => {
   const [photo, setPhoto] = useState('');
   const [price, setPrice] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const status = useSelector((state) => state.doctors.status);
   const error = useSelector((state) => state.doctors.error);
 
@@ -17,6 +19,7 @@ const DoctorForm = () => {
       dispatch(addDoctor({
         name, about, photo, price,
       }));
+      navigate("/home");
       setName('');
       setAbout('');
       setPhoto('');
