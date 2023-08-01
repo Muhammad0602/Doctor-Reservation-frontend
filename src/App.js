@@ -49,6 +49,6 @@ const AppContent = () => {
       </Routes>
     </>
   );
-}
+};
 
 export default App;
