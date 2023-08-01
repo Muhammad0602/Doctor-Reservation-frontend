@@ -35,7 +35,6 @@ const DoctorForm = () => {
 
   return (
     <div className="form-container">
-       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
         <input type="text" value={photo} onChange={(e) => setPhoto(e.target.value)} placeholder="Photo (URL)" />
@@ -45,6 +44,7 @@ const DoctorForm = () => {
           Add Doctor
         </button>
       </form>
+       {error && <div className="error-message">{error}</div>}
     </div>
   );
 };
