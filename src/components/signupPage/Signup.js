@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { signupUser } from '../../redux/users/userSlice';
 
 const Signup = () => {
@@ -7,11 +8,13 @@ const Signup = () => {
   const error = useSelector((state) => state.user.error);
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username && fullName) {
       dispatch(signupUser({ username, full_name: fullName }));
+      navigate('/login');
     } else {
       alert('Please fill in all fields');
     }

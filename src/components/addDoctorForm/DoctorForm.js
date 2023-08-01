@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addDoctor } from '../../redux/doctors/doctorsSlice';
 
 const DoctorForm = () => {
@@ -7,26 +8,33 @@ const DoctorForm = () => {
   const [about, setAbout] = useState('');
   const [photo, setPhoto] = useState('');
   const [price, setPrice] = useState('');
+  const [error, setError] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const status = useSelector((state) => state.doctors.status);
-  const error = useSelector((state) => state.doctors.error);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (name && about && price) {
-      dispatch(addDoctor({
-        name, about, photo, price,
-      }));
-      setName('');
-      setAbout('');
-      setPhoto('');
-      setPrice('');
+      try {
+        await dispatch(addDoctor({
+          name, about, photo, price,
+        }));
+        navigate('/home');
+        setName('');
+        setAbout('');
+        setPhoto('');
+        setPrice('');
+      } catch (error) {
+        setError('Failed to add doctor. Please try again.');
+      }
+    } else {
+      setError('Please fill in all the required fields.');
     }
   };
 
   return (
     <div className="form-container">
-      {status === 'failed' && <div>{error}</div>}
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
         <input type="text" value={photo} onChange={(e) => setPhoto(e.target.value)} placeholder="Photo (URL)" />
@@ -36,6 +44,7 @@ const DoctorForm = () => {
           Add Doctor
         </button>
       </form>
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 };
