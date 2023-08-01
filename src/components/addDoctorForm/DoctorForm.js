@@ -13,17 +13,23 @@ const DoctorForm = () => {
   const status = useSelector((state) => state.doctors.status);
   const error = useSelector((state) => state.doctors.error);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (name && about && price) {
-      dispatch(addDoctor({
-        name, about, photo, price,
-      }));
-      navigate("/home");
-      setName('');
-      setAbout('');
-      setPhoto('');
-      setPrice('');
+      try {
+         await dispatch(addDoctor({
+           name, about, photo, price,
+         }));
+        navigate("/home");
+        setName('');
+        setAbout('');
+        setPhoto('');
+        setPrice('');
+      }
+      catch (error) {
+        console.log('Failed to add doctor:', error);
+      }
+     
     }
   };
 
