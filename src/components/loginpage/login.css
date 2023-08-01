@@ -4,6 +4,7 @@ body {
 
 .login-page {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,3 +59,8 @@ body {
 .login-container button:hover {
   background-color: rgb(4, 105, 4);
 }
+
+.login-container p {
+  text-align: center;
+}
+
