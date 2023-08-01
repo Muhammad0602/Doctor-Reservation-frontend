@@ -45,7 +45,6 @@ const AppContent = () => {
         <Route path="adddoctor" element={<Private><AddDcotor /></Private>} />
         <Route path="delete" element={<Private><DeleteDoctor /></Private>} />
         <Route path="reserveform" element={<Private><Reservation /></Private>} />
-        <Route path="reserve" element={<Private><Reserve /></Private>} />
         <Route path="myreservations" element={<Private><Reservations /></Private>} />
       </Routes>
     </>
