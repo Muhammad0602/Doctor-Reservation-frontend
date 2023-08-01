@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 600px) {
-  .reservation-page{
+  .reservation-page {
     display: grid;
     grid-template-columns: 1fr;
   }

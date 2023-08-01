@@ -8,7 +8,7 @@ const store = configureStore({
   reducer: {
     doctors: doctorsReducer,
     user: userReducer,
-    Reservation: reservationsReducer,
+    reservation: reservationsReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMiddleware),
 });

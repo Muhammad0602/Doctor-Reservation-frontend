@@ -22,7 +22,6 @@ a {
   justify-content: space-between;
   width: 200px;
   border-right: 1px solid #0000002f;
-
 }
 
 .sidebar_container-uperhead {
@@ -93,13 +92,12 @@ small {
 }
 
 .nav_btn {
- display: none;
+  display: none;
 }
 
-@media  (max-width: 600px){
+@media (max-width: 600px) {
   .nav_btn {
     display: block;
-    padding: 5px;
     cursor: pointer;
     background: transparent;
     border: none;

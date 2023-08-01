@@ -2,12 +2,8 @@ import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet, Link } from 'react-router-dom';
 import {
-  FaTwitter,
-  FaFacebookF,
-  FaVine,
-  FaPinterestP,
-  FaBars,
-  FaTimes,
+  FaTwitter, FaFacebookF, FaVine, FaPinterestP,
+  FaBars, FaTimes,
 } from 'react-icons/fa';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import { logout } from '../redux/users/userSlice';
@@ -33,11 +29,8 @@ const Sidebar = () => {
         <FaBars />
       </button>
       <div ref={navRef} className="sidebar_container flex">
-        <button
-          className="nav_btn nav_btn_close"
-          type="button"
-          onClick={showNavbar}
-        >
+
+        <button className="nav_btn nav_btn_close" type="button" onClick={showNavbar}>
           <FaTimes />
         </button>
         <div className="sidebar_container-uperhead flex">
@@ -55,9 +48,9 @@ const Sidebar = () => {
               </li>
               <li className="sidebar-link">
                 <Link
-                  onClick={() => setActiveNav('reserve')}
-                  className={activeNav === 'reserve' ? 'active' : ''}
-                  to="/reserve"
+                  onClick={() => setActiveNav('reserveform')}
+                  className={activeNav === 'reserveform' ? 'active' : ''}
+                  to="/reserveform"
                 >
                   Reserve
                 </Link>
@@ -90,20 +83,12 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li className="sidebar-link">
-                <Link
-                  onClick={() => setActiveNav('login')}
-                  className={activeNav === 'login' ? 'active' : ''}
-                  to="/login"
-                >
+                <Link onClick={() => setActiveNav('login')} className={activeNav === 'login' ? 'active' : ''} to="/login">
                   Login
                 </Link>
               </li>
               <li className="sidebar-link">
-                <Link
-                  onClick={() => setActiveNav('signup')}
-                  className={activeNav === 'signup' ? 'active' : ''}
-                  to="/signup"
-                >
+                <Link onClick={() => setActiveNav('signup')} className={activeNav === 'signup' ? 'active' : ''} to="/signup">
                   Sign up
                 </Link>
               </li>
@@ -111,10 +96,7 @@ const Sidebar = () => {
               <li
                 className="sidebar-link"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
                 }}
               >
                 <lord-icon
@@ -142,6 +124,7 @@ const Sidebar = () => {
 
         <Outlet />
       </div>
+
     </div>
   );
 };
