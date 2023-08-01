@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { createReserve } from '../redux/reservations/ReservationSlice';
 import { getDoctors } from '../redux/doctors/doctorsSlice';
 import './componentsCss/reserve.css';
@@ -11,7 +11,7 @@ const Reservation = () => {
   // const user = JSON.parse(storage);
   // console.log(storage);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,9 +49,8 @@ const Reservation = () => {
       // Dispatch the createReserve action to make the reservation request
       console.log({ ...reserve, username: user });
       await dispatch(createReserve({ ...reserve, username: user }));
-      // alert('Reservation created successfully!');
-      // navigate('/my-reservations');
-      // Redirect to the reservation page after successful reservation
+      alert('Reservation created successfully!');
+      navigate('/myreservations'); // Redirect to the reservation page after successful reservation
     } catch (error) {
       alert('Error occurred while making a reservation.');
       console.error(error);
