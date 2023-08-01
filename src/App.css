@@ -9,12 +9,11 @@ body {
 
 .home-page {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   gap: 20px;
   overflow-x: auto;
-  margin-top: 200px;
-  padding-left: 600px;
+  margin-top: 20px;
 }
 
 .doctor-info {
@@ -135,5 +134,26 @@ body {
   100% {
     transform: rotate(360deg);
     border-right-color: rgb(221, 214, 18);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-page {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    grid-template-columns: 1fr;
   }
 }

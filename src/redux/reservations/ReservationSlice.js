@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const API_BASE = 'http://127.0.0.1:3000/api/v1';
+const API_BASE = 'http://127.0.0.1:3000/api';
 
 export const createReserve = createAsyncThunk('reserve/createReserve', async (payload) => {
   const response = await fetch(`${API_BASE}/reservations`, {

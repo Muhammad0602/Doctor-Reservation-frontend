@@ -8,7 +8,6 @@ export const initialState = {
 
 export const addDoctor = createAsyncThunk('doctor/addDoctor', async (doctorData) => {
   const response = await axios.post('http://localhost:3000/api/doctors', { ...doctorData, price_hour: doctorData.price });
-  console.log('sdfasf', response.data);
   return response.data;
 });
 

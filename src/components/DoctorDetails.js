@@ -48,7 +48,7 @@ const DoctorDetails = () => {
           </li>
         </ul>
         <button type="button" className="rbtn">
-          <Link to="/reserve" className="re-btn">Reserve</Link>
+          <Link to="/reserve" className="rebtn">Reserve</Link>
         </button>
       </div>
     </section>
