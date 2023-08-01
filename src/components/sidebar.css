@@ -12,7 +12,7 @@ a {
   font-size: large;
   font-weight: 700;
   display: block;
-  padding: 20px;
+  padding: 8px;
 }
 
 .sidebar_container {
@@ -89,4 +89,33 @@ small {
   display: flex;
   justify-content: space-evenly;
   margin: 20px 30px;
+}
+
+.nav_btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav_btn {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(57, 57, 57);
+    font-size: large;
+    padding: 1rem;
+  }
+
+  .sidebar_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    transform: translateX(-100vh);
+  }
+
+  .responsive {
+    transform: none;
+  }
 }
