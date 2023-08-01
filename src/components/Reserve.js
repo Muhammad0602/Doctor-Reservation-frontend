@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { createReserve } from '../redux/reservations/ReservationSlice';
 import { getDoctors } from '../redux/doctors/doctorsSlice';
 import './componentsCss/reserve.css';
@@ -11,7 +11,7 @@ const Reservation = () => {
   // const user = JSON.parse(storage);
   // console.log(storage);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const Reservation = () => {
     date: '',
     time: '',
     doctor: '',
+    city: '',
   });
 
   const handleInputChange = (e) => {
@@ -36,25 +37,21 @@ const Reservation = () => {
   const submit = async (e) => {
     e.preventDefault();
     const {
-      date, time, doctor,
+      date, time, doctor, city,
     } = reserve;
-    console.log(reserve);
 
-    if (!date || !time || !doctor) {
+    if (!date || !time || !doctor || !city) {
       alert('Please fill in all the required fields.');
       return;
     }
 
     try {
-      const payload = {
-        ...reserve,
-        username: user.username,
-      };
-
       // Dispatch the createReserve action to make the reservation request
-      dispatch(createReserve(payload));
-      alert('Reservation created successfully!');
-      navigate('/my-reservations'); // Redirect to the reservation page after successful reservation
+      console.log({ ...reserve, username: user });
+      await dispatch(createReserve({ ...reserve, username: user }));
+      // alert('Reservation created successfully!');
+      // navigate('/my-reservations');
+      // Redirect to the reservation page after successful reservation
     } catch (error) {
       alert('Error occurred while making a reservation.');
       console.error(error);
@@ -67,12 +64,10 @@ const Reservation = () => {
       <form onSubmit={submit}>
         <div className="make-heading">
           <h2>Make a reservation with us</h2>
-          {/* <div className="city">
-            <p>City:</p>
-            <input type="text" name="city"
-            value={reserve.city}
-            onChange={handleInputChange} placeholder="enter city..." />
-          </div> */}
+          <div className="time">
+            <p>city:</p>
+            <input type="city" name="city" value={reserve.city} onChange={handleInputChange} placeholder="city" />
+          </div>
         </div>
         <div className="date">
           <p>Date:</p>
