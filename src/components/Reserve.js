@@ -7,8 +7,9 @@ import './componentsCss/reserve.css';
 
 const Reservation = () => {
   const doctors = useSelector((state) => state.doctors.doctors);
-  const storage = localStorage.getItem('token');
-  const user = storage ? JSON.parse (storage): null;
+  const user = localStorage.getItem('username');
+  // const user = JSON.parse(storage);
+  // console.log(storage);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,8 +19,7 @@ const Reservation = () => {
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
-    user_id: user?.id || '',
-    city: '',
+    username: user?.user || null,
     date: '',
     time: '',
     doctor: '',
@@ -36,10 +36,11 @@ const Reservation = () => {
   const submit = async (e) => {
     e.preventDefault();
     const {
-      city, date, time, doctor,
+      date, time, doctor,
     } = reserve;
+    console.log(reserve);
 
-    if (!city || !date || !time || !doctor) {
+    if (!date || !time || !doctor) {
       alert('Please fill in all the required fields.');
       return;
     }
@@ -47,13 +48,13 @@ const Reservation = () => {
     try {
       const payload = {
         ...reserve,
-        user_id: user.id,
+        username: user.username,
       };
 
       // Dispatch the createReserve action to make the reservation request
       dispatch(createReserve(payload));
       alert('Reservation created successfully!');
-      navigate('/myreservations'); // Redirect to the reservation page after successful reservation
+      navigate('/my-reservations'); // Redirect to the reservation page after successful reservation
     } catch (error) {
       alert('Error occurred while making a reservation.');
       console.error(error);
@@ -66,10 +67,12 @@ const Reservation = () => {
       <form onSubmit={submit}>
         <div className="make-heading">
           <h2>Make a reservation with us</h2>
-          <div className="city">
+          {/* <div className="city">
             <p>City:</p>
-            <input type="text" name="city" value={reserve.city} onChange={handleInputChange} placeholder="enter city..." />
-          </div>
+            <input type="text" name="city"
+            value={reserve.city}
+            onChange={handleInputChange} placeholder="enter city..." />
+          </div> */}
         </div>
         <div className="date">
           <p>Date:</p>

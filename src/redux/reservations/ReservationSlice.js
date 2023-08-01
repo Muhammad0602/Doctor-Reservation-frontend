@@ -7,11 +7,10 @@ export const createReserve = createAsyncThunk('reserve/createReserve', async (pa
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      city: payload.city,
       date: payload.date,
       time: payload.time,
       doctor_id: payload.doctor,
-      user_id: payload.user_id,
+      username: payload.username,
     }),
   });
 

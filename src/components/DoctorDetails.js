@@ -36,11 +36,6 @@ const DoctorDetails = () => {
 
             {doctor.about}
           </li>
-          <li>
-            City:
-
-            {doctor.city}
-          </li>
         </ul>
         <button type="button" className="rbtn">
           <Link to="/reserve" className="rebtn">Reserve</Link>

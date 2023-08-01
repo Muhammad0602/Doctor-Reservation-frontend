@@ -57,10 +57,6 @@ function Reservations() {
         <div className="reservation-info flex" key={reservation.id}>
           <img className="photo" src={reservation.photo} alt={reservation.name} />
           <h1>{reservation.doctor}</h1>
-          <h3>
-            {reservation.city}
-            Kabul
-          </h3>
           <p>{formatAppointmentTime(reservation.appointment_time)}</p>
 
         </div>
