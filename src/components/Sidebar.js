@@ -49,16 +49,6 @@ const Sidebar = () => {
                 Del Doctor
               </Link>
             </li>
-            <li className="sidebar-link">
-              <Link onClick={() => setActiveNav('login')} className={activeNav === 'login' ? 'active' : ''} to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="sidebar-link">
-              <Link onClick={() => setActiveNav('signup')} className={activeNav === 'signup' ? 'active' : ''} to="/signup">
-                Sign up
-              </Link>
-            </li>
             <li
               className="sidebar-link"
               style={{
