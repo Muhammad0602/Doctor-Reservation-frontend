@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const initialState = {
   doctors: [],
+  doctor: [],
   isLoading: false,
   status: 'idle',
   error: '',
@@ -16,6 +17,15 @@ export const addDoctor = createAsyncThunk('doctor/addDoctor', async (doctorData)
 export const getDoctors = createAsyncThunk('doctors/getDoctors', async () => {
   try {
     const response = await axios.get('http://localhost:3000/api/doctors');
+    return response.data;
+  } catch (error) {
+    throw error.response.data.error;
+  }
+});
+
+export const getDoctor = createAsyncThunk('doctors/getDoctor', async (doctorId) => {
+  try {
+    const response = await axios.get(`http://localhost:3000/api/doctors/${doctorId}`);
     return response.data;
   } catch (error) {
     throw error.response.data.error;
@@ -48,6 +58,14 @@ export const doctorsSlice = createSlice({
         isLoading: false,
         error: action.payload,
       }))
+
+      .addCase(getDoctor.pending, (state) => ({ ...state, isLoading: true }))
+      .addCase(getDoctor.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        doctor: action.payload,
+      }))
+
       .addCase(deleteDoctor.pending, (state) => ({ ...state, isLoading: true }))
       .addCase(deleteDoctor.fulfilled, (state, action) => {
         const updatedDoctors = state.doctors.filter((doctor) => doctor.id !== action.payload);
