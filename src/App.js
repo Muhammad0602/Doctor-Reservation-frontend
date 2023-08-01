@@ -27,14 +27,11 @@ function App() {
   );
 }
 
-function AppContent() {
-  // Get the current location
+const AppContent = () => {
   const location = useLocation();
-  // Check if the current route matches the login or signup path
   const isLoginPage = location.pathname === '/login';
   const isSignupPage = location.pathname === '/signup';
 
-  // Render the Sidebar only if the route is not the login or signup page
   const renderSidebar = !isLoginPage && !isSignupPage;
 
   return (
