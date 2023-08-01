@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addDoctor } from '../../redux/doctors/doctorsSlice';
 import { useNavigate } from 'react-router-dom';
+import { addDoctor } from '../../redux/doctors/doctorsSlice';
 
 const DoctorForm = () => {
   const [name, setName] = useState('');
@@ -17,19 +17,17 @@ const DoctorForm = () => {
     e.preventDefault();
     if (name && about && price) {
       try {
-         await dispatch(addDoctor({
-           name, about, photo, price,
-         }));
-        navigate("/home");
+        await dispatch(addDoctor({
+          name, about, photo, price,
+        }));
+        navigate('/home');
         setName('');
         setAbout('');
         setPhoto('');
         setPrice('');
-      }
-      catch (error) {
+      } catch (error) {
         console.log('Failed to add doctor:', error);
       }
-     
     }
   };
 

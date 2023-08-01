@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../../redux/users/userSlice';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
 import './login.css';
 
 const Login = () => {
@@ -36,7 +36,10 @@ const Login = () => {
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
           <button type="submit">Log In</button>
         </form>
-        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        <p>
+          Don&apos;t have an account?
+          <Link to="/signup">Sign up</Link>
+        </p>
       </div>
     </div>
   );
