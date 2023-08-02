@@ -38,10 +38,20 @@ function Home() {
     <div className="container py-4 px-4 justify-content-center">
       <Swiper
         navigation
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={30}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          1024: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+          600: {
+            slidesPerView: 1,
+            slidesPerGroup: 2,
+          },
         }}
         modules={[Navigation, Pagination]}
         className="mySwiper"
