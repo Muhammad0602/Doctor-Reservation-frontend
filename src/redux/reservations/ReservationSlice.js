@@ -10,7 +10,6 @@ export const createReserve = createAsyncThunk('reserve/createReserve', async (pa
     username: payload.username,
     city: payload.city,
   };
-  console.log(ree);
   const response = await fetch('http://127.0.0.1:3000/api/reservations', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
@@ -19,9 +18,6 @@ export const createReserve = createAsyncThunk('reserve/createReserve', async (pa
 
   const data = await response.json();
   return data;
-  // const response = await axios.post('http://localhost:3000/api/reservations', {...ree});
-  // console.log('sdfasf', response.data);
-  // return response.data;
 });
 
 export const getReserve = createAsyncThunk('reserve/getReserve', async () => {

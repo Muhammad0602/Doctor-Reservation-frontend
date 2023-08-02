@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getDoctors } from '../redux/doctors/doctorsSlice';
 
-function Home() {
+const Home = () => {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
   const dispatch = useDispatch();
 
@@ -44,6 +44,6 @@ function Home() {
       ))}
     </div>
   );
-}
+};
 
 export default Home;

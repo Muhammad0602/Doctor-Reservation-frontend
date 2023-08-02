@@ -16,7 +16,7 @@ const Login = () => {
       await dispatch(loginUser(username));
       navigate('/home');
     } catch (error) {
-      console.log('Login failed');
+      // eslint-disable-next-line no-console
     }
   };
 

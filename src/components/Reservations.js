@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReservations } from '../redux/reservations/reservationsSlice';
 import './reservation.css';
 
-function Reservations() {
+const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -39,5 +39,5 @@ function Reservations() {
       ))}
     </div>
   );
-}
+};
 export default Reservations;
