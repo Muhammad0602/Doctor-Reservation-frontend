@@ -3,6 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReservations } from '../redux/reservations/reservationsSlice';
 import './reservation.css';
 
+const formatAppointmentTime = (appointmentTime) => {
+  const date = new Date(appointmentTime);
+  const day = date.getDate();
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+
+  return `${day} ${month}, ${year} ${hour}:${minute}:${second}`;
+};
 function Reservations() {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
@@ -33,7 +48,7 @@ function Reservations() {
           <div className="redetails">
             <p>{reservation.city}</p>
             <p>{reservation.appointment_date}</p>
-            <p>{reservation.appointment_time}</p>
+            <p>{formatAppointmentTime(reservation.appointment_time)}</p>
           </div>
         </div>
       ))}

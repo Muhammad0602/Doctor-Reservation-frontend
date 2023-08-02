@@ -19,18 +19,16 @@ a {
 .container {
   display: flex;
   align-items: center;
-  
   margin: 0 !important;
 }
 
 .swiper {
   width: 100%;
   height: 60vh;
-  
   display: flex !important;
   padding-left: 40px !important;
   justify-content: center !important;
-  align-items: center!important;
+  align-items: center !important;
 }
 
 .swiper-wrapper {
@@ -183,10 +181,10 @@ a {
 }
 
 @media (max-width: 600px) {
-    .container {
-      display: flex;
-      align-items: center;
-    }
+  .container {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 1024px) {
