@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { getDoctors } from '../redux/doctors/doctorsSlice';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
@@ -28,20 +35,31 @@ function Home() {
     );
   }
   return (
-    <div className="home-page">
-      {doctors.map((doctor) => (
-        <div className="doctor-info" key={doctor.id}>
-          <Link to={`/${doctor.id}`} className="link">
-            <img className="photo" src={doctor.photo} alt={doctor.name} />
-            <h2>{doctor.name}</h2>
-            <p>{doctor.about}</p>
-            <p>
-              Buy one hour of time with only $
-              {doctor.price_hour}
-            </p>
-          </Link>
-        </div>
-      ))}
+    <div className="container py-4 px-4 justify-content-center">
+      <Swiper
+        navigation
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Navigation, Pagination]}
+        className="mySwiper"
+      >
+        {doctors.map((doctor) => (
+          <SwiperSlide className="doctor-info" key={doctor.id}>
+            <Link to={`/${doctor.id}`} className="link">
+              <img className="photo" src={doctor.photo} alt={doctor.name} />
+              <h2>{doctor.name}</h2>
+              <p>{doctor.about}</p>
+              <p>
+                Buy one hour of time with only $
+                {doctor.price_hour}
+              </p>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

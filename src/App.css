@@ -7,13 +7,32 @@ body {
   box-sizing: border-box;
 }
 
-.home-page {
+/* .home-page {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   gap: 20px;
   overflow-x: auto;
   margin-top: 20px;
+} */
+.container {
+  display: flex;
+  align-items: center;
+}
+.mySwiper {
+  width: 90%;
+  height: 60vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .doctor-info {
