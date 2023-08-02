@@ -29,26 +29,17 @@ const DoctorDetails = () => {
         <ul>
           <li>
             Price per Hour: $
-            {doctor.price}
+
+            {doctor.price_hour}
           </li>
           <li>
             About:
 
             {doctor.about}
           </li>
-          <li>
-            City:
-
-            {doctor.city}
-          </li>
-          <li>
-            Speciality:
-
-            {doctor.speciality}
-          </li>
         </ul>
         <button type="button" className="rbtn">
-          <Link to="/reserve" className="rebtn">Reserve</Link>
+          <Link to="/reserveform" className="rebtn">Reserve</Link>
         </button>
       </div>
     </section>

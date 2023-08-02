@@ -3,20 +3,25 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const API_BASE = 'http://127.0.0.1:3000/api';
 
 export const createReserve = createAsyncThunk('reserve/createReserve', async (payload) => {
-  const response = await fetch(`${API_BASE}/reservations`, {
+  const ree = {
+    appointment_date: payload.date,
+    appointment_time: payload.time,
+    doctor_id: payload.doctor,
+    username: payload.username,
+    city: payload.city,
+  };
+  console.log(ree);
+  const response = await fetch('http://127.0.0.1:3000/api/reservations', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      city: payload.city,
-      date: payload.date,
-      time: payload.time,
-      doctor_id: payload.doctor,
-      patient_id: payload.patient_id,
-    }),
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify(ree),
   });
 
   const data = await response.json();
   return data;
+  // const response = await axios.post('http://localhost:3000/api/reservations', {...ree});
+  // console.log('sdfasf', response.data);
+  // return response.data;
 });
 
 export const getReserve = createAsyncThunk('reserve/getReserve', async () => {
