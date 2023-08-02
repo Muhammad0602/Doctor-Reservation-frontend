@@ -12,12 +12,10 @@ import './reservation.css';
 //   ];
 //   const month = monthNames[date.getMonth()];
 //   const year = date.getFullYear();
-
 //   return `${day} ${month}, ${year}`;
 // };
-
 function Reservations() {
-  const { reservations, isLoading, error } = useSelector((store) => store.reservation);
+  const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getReservations());
@@ -45,7 +43,6 @@ function Reservations() {
       </div>
     );
   }
-
   return (
     <div className="reservation-page flex">
       {reservations.map((reservation) => (
@@ -60,5 +57,4 @@ function Reservations() {
     </div>
   );
 }
-
 export default Reservations;
