@@ -39,18 +39,16 @@ function Home() {
       <Swiper
         navigation
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={60}
         pagination={{
           clickable: true,
         }}
         breakpoints={{
           1024: {
             slidesPerView: 2,
-            slidesPerGroup: 2,
           },
           600: {
             slidesPerView: 1,
-            slidesPerGroup: 2,
           },
         }}
         modules={[Navigation, Pagination]}
