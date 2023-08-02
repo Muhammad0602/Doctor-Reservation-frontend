@@ -19,6 +19,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .mySwiper {
   width: 90%;
   height: 60vh;
