@@ -15,7 +15,7 @@ import Sidebar from './components/Sidebar';
 import Reserve from './components/Reserve';
 import DoctorDetails from './components/DoctorDetails';
 
-function App() {
+const App = () => {
   const token = localStorage.getItem('token');
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -26,7 +26,7 @@ function App() {
       <AppContent />
     </BrowserRouter>
   );
-}
+};
 
 const AppContent = () => {
   const location = useLocation();

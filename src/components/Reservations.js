@@ -25,7 +25,7 @@ const formatAppointmentTime = (appointmentTime) => {
 
   return `${day} ${month}, ${year} ${hour}:${minute}:${second}`;
 };
-function Reservations() {
+const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -80,5 +80,5 @@ function Reservations() {
       </Swiper>
     </div>
   );
-}
+};
 export default Reservations;

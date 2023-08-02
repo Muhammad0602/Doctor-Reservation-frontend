@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Home() {
+const Home = () => {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
   const dispatch = useDispatch();
 
@@ -70,6 +70,6 @@ function Home() {
       </Swiper>
     </div>
   );
-}
+};
 
 export default Home;

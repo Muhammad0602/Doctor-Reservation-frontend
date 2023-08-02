@@ -8,8 +8,6 @@ import './componentsCss/reserve.css';
 const Reservation = () => {
   const doctors = useSelector((state) => state.doctors.doctors);
   const user = localStorage.getItem('username');
-  // const user = JSON.parse(storage);
-  // console.log(storage);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -47,7 +45,6 @@ const Reservation = () => {
 
     try {
       // Dispatch the createReserve action to make the reservation request
-      console.log({ ...reserve, username: user });
       await dispatch(createReserve({ ...reserve, username: user }));
       alert('Reservation created successfully!');
       navigate('/myreservations'); // Redirect to the reservation page after successful reservation
