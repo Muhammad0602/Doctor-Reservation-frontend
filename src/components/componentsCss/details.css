@@ -4,9 +4,9 @@
   font-family: "Trebuchet MS", sans-serif;
 }
 
-.sidebar_container {
+/* .sidebar_container {
   display: none;
-}
+} */
 
 .dimg-desktop {
   display: none;
@@ -49,9 +49,9 @@
 /* for desktop */
 
 @media only screen and (min-width: 768px) {
-  .sidebar_container {
+  /* .sidebar_container {
     display: block;
-  }
+  } */
 
   .dimg-mobile {
     display: none;
