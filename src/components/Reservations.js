@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { getReservations } from '../redux/reservations/reservationsSlice';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './reservation.css';
 
 const formatAppointmentTime = (appointmentTime) => {
@@ -40,18 +47,37 @@ function Reservations() {
     );
   }
   return (
-    <div className="reservation-page flex">
-      {reservations.map((reservation) => (
-        <div className="reservation-info flex" key={reservation.id}>
-          <img className="photo" src={reservation.photo} alt={reservation.name} />
-          <h1>{reservation.doctor_name}</h1>
-          <div className="redetails">
-            <p>{reservation.city}</p>
-            <p>{reservation.appointment_date}</p>
-            <p>{formatAppointmentTime(reservation.appointment_time)}</p>
-          </div>
-        </div>
-      ))}
+    <div className="container py-4 px-4 justify-content-center">
+      <Swiper
+        navigation
+        slidesPerView={1}
+        spaceBetween={60}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          1024: {
+            slidesPerView: 2,
+          },
+          600: {
+            slidesPerView: 1,
+          },
+        }}
+        modules={[Navigation, Pagination]}
+        className="mySwiper"
+      >
+        {reservations.map((reservation) => (
+          <SwiperSlide className="reservation-info flex" key={reservation.id}>
+            <img className="photo" src={reservation.photo} alt={reservation.name} />
+            <h1>{reservation.doctor_name}</h1>
+            <div className="redetails">
+              <p>{reservation.city}</p>
+              <p>{reservation.appointment_date}</p>
+              <p>{formatAppointmentTime(reservation.appointment_time)}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
