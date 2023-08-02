@@ -26,15 +26,18 @@ export const getReserve = createAsyncThunk('reserve/getReserve', async () => {
   return data;
 });
 
-export const deleteReserve = createAsyncThunk('reserve/deleteReserve', async (payload) => {
-  const response = await fetch(`${API_BASE}/reservations/${payload}`, {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
-  });
+export const deleteReserve = createAsyncThunk(
+  'reserve/deleteReserve',
+  async (payload) => {
+    const response = await fetch(`${API_BASE}/reservations/${payload}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  const data = await response.json();
-  return data;
-});
+    const data = await response.json();
+    return data;
+  },
+);
 
 const initialState = {
   reservations: [],

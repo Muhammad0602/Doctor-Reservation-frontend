@@ -4,9 +4,9 @@
   font-family: "Trebuchet MS", sans-serif;
 }
 
-.sidebar_container {
+/* .sidebar_container {
   display: none;
-}
+} */
 
 .dimg-desktop {
   display: none;
@@ -49,9 +49,9 @@
 /* for desktop */
 
 @media only screen and (min-width: 768px) {
-  .sidebar_container {
+  /* .sidebar_container {
     display: block;
-  }
+  } */
 
   .dimg-mobile {
     display: none;
@@ -64,21 +64,21 @@
 
   .dimg-desktop img {
     margin: 20px;
-    width: 44rem;
-    height: 40rem;
+    width: 38rem;
+    height: 39rem;
+    border: 1px solid black;
+    border-radius: 2rem;
   }
 
   .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 40px;
+    margin: 0 40px;
   }
 
   .dwrap {
     text-align: right;
-
-    /* margin-right: 30px; */
   }
 
   .container ul li {
