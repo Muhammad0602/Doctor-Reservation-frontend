@@ -19,19 +19,16 @@
   margin-bottom: 20px;
 }
 
-.city,
 .date,
 .time {
   margin-bottom: 10px;
 }
 
-.city p,
 .date p,
 .time p {
   margin-bottom: 5px;
 }
 
-.city input,
 .date input,
 .time input {
   padding: 6px;
@@ -77,13 +74,11 @@
     margin: 40px;
   }
 
-  .city,
   .date,
   .time {
     margin-bottom: 20px;
   }
 
-  .city input,
   .date input,
   .time input {
     padding: 12px;
