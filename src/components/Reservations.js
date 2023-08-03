@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { getReservations } from '../redux/reservations/reservationsSlice';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './reservation.css';
 
-function Reservations() {
+const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
 
@@ -28,9 +35,32 @@ function Reservations() {
   return (
     <div className="reservation-page">
       <h1 className="reserve-title">All the Reservations</h1>
-      <div className="reservation-list">
+      <Swiper
+        navigation
+        slidesPerView={1}
+        spaceBetween={60}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          1460: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          600: {
+            slidesPerView: 1,
+          },
+        }}
+        modules={[Navigation, Pagination]}
+        className="mySwiper"
+      >
         {reservations.map((reservation) => (
-          <div className="reservation-info flex m-2" key={reservation.id}>
+          <SwiperSlide className="reservation-info flex" key={reservation.id}>
             <img className="photo" src={reservation.photo} alt={reservation.name} />
             <h2 className="text-center">
               Dr.
@@ -52,10 +82,10 @@ function Reservations() {
                 {new Date(reservation.appointment_time).getMinutes()}
               </p>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
-}
+};
 export default Reservations;

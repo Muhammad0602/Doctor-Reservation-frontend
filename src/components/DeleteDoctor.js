@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteDoctor, getDoctors } from '../redux/doctors/doctorsSlice';
 
-function DeleteDoctor() {
+const DeleteDoctor = () => {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
   const dispatch = useDispatch();
 
@@ -41,6 +41,6 @@ function DeleteDoctor() {
       ))}
     </div>
   );
-}
+};
 
 export default DeleteDoctor;

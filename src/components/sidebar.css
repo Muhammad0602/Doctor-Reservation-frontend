@@ -6,15 +6,6 @@ body {
   background: #ecf0f1;
 }
 
-a {
-  color: rgb(57, 57, 57);
-  text-decoration: none;
-  font-size: large;
-  font-weight: 700;
-  display: block;
-  padding: 8px;
-}
-
 .sidebar_container {
   flex-direction: column;
   background: rgb(255,255,255);

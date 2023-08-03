@@ -1,15 +1,20 @@
 
 .reservation-page {
-  width: 100%;
-  justify-content: flex-start;
+  width: 90%;
   padding: 1rem;
-  gap: 2rem;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .reserve-title {
   background-color: white;
   padding: 1rem;
   border-radius: 1rem;
+  width: 90%;
+  text-align: center;
 }
 
 .reservation-list {
