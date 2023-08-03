@@ -35,20 +35,20 @@ const Home = () => {
     );
   }
   return (
-    <div className="container py-4 px-4 justify-content-center">
+    <div className="Home-container">
       <Swiper
         navigation
         slidesPerView={1}
-        spaceBetween={60}
+        spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         breakpoints={{
-          1024: {
+          768: {
             slidesPerView: 2,
           },
-          600: {
-            slidesPerView: 1,
+          1024: {
+            slidesPerView: 3,
           },
         }}
         modules={[Navigation, Pagination]}

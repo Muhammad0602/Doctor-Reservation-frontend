@@ -91,21 +91,23 @@ small {
 
 @media (max-width: 768px) {
   .nav_btn {
-    display: block;
+    display: flex;
     cursor: pointer;
     background: transparent;
     border: none;
     outline: none;
     font-size: large;
     padding: 1rem;
+    position: absolute;
   }
 
-  .sidebar_container {
-    position: fixed;
+  .sidebar_container_items {
+    position: absolute;
     top: 0;
     left: 0;
     transition: 1s;
     transform: translateX(-100vh);
+    z-index: 9999;
   }
 
   .responsive {

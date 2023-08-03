@@ -16,31 +16,19 @@ a {
   padding: 8px !important;
 }
 
-.container {
+.Home-container {
   display: flex;
   align-items: center;
-  margin: 0 !important;
+  height: 100vh;
+  width: 80%;
 }
 
 .swiper {
-  width: 100%;
+  width: 80%;
   height: 60vh;
   display: flex !important;
-  padding-left: 40px !important;
   justify-content: center !important;
   align-items: center !important;
-}
-
-.swiper-wrapper {
-  align-items: center;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .swiper-button-prev {
@@ -63,6 +51,7 @@ a {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  position: static !important;
 }
 
 .doctor-info .photo {
@@ -177,23 +166,36 @@ a {
   }
 }
 
-@media (max-width: 600px) {
-  .container {
-    display: flex;
-    align-items: center;
-  }
-}
-
 @media (max-width: 1024px) {
-  .container {
+  .Home-container {
     display: flex;
     align-items: center;
+    height: 100vh;
+    width: 80%;
+  }
+
+  .swiper {
+    width: 80%;
+    height: 60vh;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
+  .Home-container {
     display: flex;
     align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 60vh;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }

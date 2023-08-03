@@ -1,4 +1,3 @@
-
 .reservation-page {
   width: 90%;
   padding: 1rem;
@@ -15,12 +14,7 @@
   border-radius: 1rem;
   width: 90%;
   text-align: center;
-}
-
-.reservation-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-gap: 20px;
+  margin-bottom: 4rem;
 }
 
 .reservation-info {
