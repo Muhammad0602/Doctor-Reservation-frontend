@@ -43,17 +43,11 @@ const Reservations = () => {
           clickable: true,
         }}
         breakpoints={{
-          1460: {
-            slidesPerView: 4,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-          768: {
+          600: {
             slidesPerView: 2,
           },
-          600: {
-            slidesPerView: 1,
+          1204: {
+            slidesPerView: 3,
           },
         }}
         modules={[Navigation, Pagination]}
