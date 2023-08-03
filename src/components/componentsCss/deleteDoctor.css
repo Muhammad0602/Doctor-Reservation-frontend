@@ -101,7 +101,12 @@
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .deldoc-info {
     width: 340px;
+    height: 150px;
   }
+
+  .deldoc-name {
+    font-size: 1.2rem;
+}
 
   .deldoc-info .photo {
     width: 100px;
