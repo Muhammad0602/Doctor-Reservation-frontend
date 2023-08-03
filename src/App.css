@@ -20,12 +20,12 @@ a {
   display: flex;
   align-items: center;
   height: 100vh;
-  width: 80%;
+  width: 95%;
 }
 
 .swiper {
-  width: 80%;
-  height: 75vh;
+  width: 75%;
+  height: 60vh;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -88,84 +88,6 @@ a {
   animation: load 1s ease-in-out infinite;
 }
 
-.delete-doctor {
-  width: 100%;
-  max-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  overflow-y: auto;
-  column-gap: 2rem;
-}
-
-.deldoc-info {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 400px;
-  height: 200px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.deldoc-info:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Updated values */
-  transition: box-shadow 0.5s ease;
-}
-
-.deldoc-info .photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-.deldoc-name {
-  margin: 0;
-}
-
-.delete-btn {
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.delete-btn:hover {
-  background-color: #d32f2f;
-}
-
-.flex {
-  display: flex;
-}
-
-#root {
-  display: flex;
-}
-
-@keyframes load {
-  0% {
-    border-right-color: rgb(27, 194, 12);
-  }
-
-  50% {
-    border-right-color: rgb(197, 90, 23);
-  }
-
-  100% {
-    transform: rotate(360deg);
-    border-right-color: rgb(221, 214, 18);
-  }
-}
-
 @media (max-width: 1024px) {
   .Home-container {
     display: flex;
@@ -184,16 +106,26 @@ a {
 
 @media (max-width: 768px) {
   .Home-container {
-    display: flex;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
     width: 100%;
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .Home-container {
+    width: 100%;
+    margin-top: 4rem;
   }
 
-  .swiper {
-    width: 100%;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+  .doctor-info {
+    max-width: 300px;
+    height: 360px;
+    padding: 20px;
+    text-align: center;
+    position: static !important;
+    border: 1px solid black;
+    border-radius: 0.6rem;
+    margin-bottom: 1.5rem;
   }
 }

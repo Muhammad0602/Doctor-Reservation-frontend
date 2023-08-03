@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,9 +13,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Home = () => {
   const { doctors, isLoading, error } = useSelector((store) => store.doctors);
   const dispatch = useDispatch();
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
 
   useEffect(() => {
     dispatch(getDoctors());
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [dispatch]);
 
   if (isLoading) {
@@ -34,40 +42,56 @@ const Home = () => {
       </div>
     );
   }
+
   return (
     <div className="Home-container">
-      <Swiper
-        navigation
-        slidesPerView={1}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        breakpoints={{
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-        modules={[Navigation, Pagination]}
-        className="mySwiper"
-      >
-        {doctors.map((doctor) => (
-          <SwiperSlide className="doctor-info" key={doctor.id}>
-            <Link to={`/${doctor.id}`} className="link">
-              <img className="photo" src={doctor.photo} alt={doctor.name} />
-              <h2>{doctor.name}</h2>
-              <p>{doctor.about}</p>
-              <p>
-                Buy one hour of time with only $
-                {doctor.price_hour}
-              </p>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {isMobile ? (
+        <div>
+          {doctors.map((doctor) => (
+            <div key={doctor.id} className="doctor-info">
+              <Link to={`/${doctor.id}`} className="link">
+                <img className="photo" src={doctor.photo} alt={doctor.name} />
+                <h2>{doctor.name}</h2>
+                <p>{doctor.about}</p>
+                <p>
+                  Buy one hour of time with only $
+                  {doctor.price_hour}
+                </p>
+              </Link>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Swiper
+          navigation
+          slidesPerView={3}
+          spaceBetween={60}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+          }}
+          modules={[Navigation, Pagination]}
+          className="mySwiper"
+        >
+          {doctors.map((doctor) => (
+            <SwiperSlide className="doctor-info" key={doctor.id}>
+              <Link to={`/${doctor.id}`} className="link">
+                <img className="photo" src={doctor.photo} alt={doctor.name} />
+                <h2>{doctor.name}</h2>
+                <p>{doctor.about}</p>
+                <p>
+                  Buy one hour of time with only $
+                  {doctor.price_hour}
+                </p>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </div>
   );
 };

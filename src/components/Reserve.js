@@ -56,23 +56,14 @@ const Reservation = () => {
 
   return (
     <div className="container-2">
-      <h1 className="heading">Reservation Page</h1>
+      <h1 className="heading">Book an Appointment for a Doctor</h1>
       <form onSubmit={submit}>
-        <div className="make-heading">
-          <h2>Make a reservation with us</h2>
-          <div className="time">
-            <p>city:</p>
-            <input type="city" name="city" value={reserve.city} onChange={handleInputChange} placeholder="city" />
-          </div>
-        </div>
-        <div className="date">
-          <p>Date:</p>
-          <input type="date" name="date" value={reserve.date} onChange={handleInputChange} placeholder="Date" />
-        </div>
-        <div className="time">
-          <p>Time:</p>
-          <input type="time" name="time" value={reserve.time} onChange={handleInputChange} placeholder="Time" />
-        </div>
+        <h2>Make a reservation with us</h2>
+        <input type="city" name="city" value={reserve.city} onChange={handleInputChange} placeholder="city" />
+        <input type="date" name="date" value={reserve.date} onChange={handleInputChange} placeholder="Date" />
+
+        <input type="time" name="time" value={reserve.time} onChange={handleInputChange} placeholder="Time" />
+
         <div className="select-container">
           <select name="doctor" value={reserve.doctor} onChange={handleInputChange} placeholder="Select a doctor" className="select-option">
             <option value="" className="option-item">Select a doctor</option>
