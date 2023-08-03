@@ -28,6 +28,7 @@ const formatAppointmentTime = (appointmentTime) => {
 const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getReservations());
   }, [dispatch]);
