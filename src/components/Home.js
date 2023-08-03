@@ -15,16 +15,16 @@ const Home = () => {
   const dispatch = useDispatch();
   const [isMobile, setIsMobile] = useState(false);
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
   useEffect(() => {
     dispatch(getDoctors());
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [dispatch]);
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
 
   if (isLoading) {
     return (
