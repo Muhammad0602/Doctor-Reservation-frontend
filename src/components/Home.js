@@ -23,7 +23,7 @@ const Home = () => {
   }, [dispatch]);
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 450);
+    setIsMobile(window.innerWidth <= 768);
   };
 
   if (isLoading) {
@@ -64,17 +64,14 @@ const Home = () => {
       ) : (
         <Swiper
           navigation
-          slidesPerView={1}
-          spaceBetween={30}
+          slidesPerView={3}
+          spaceBetween={60}
           pagination={{
             clickable: true,
           }}
           breakpoints={{
             768: {
               slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
             },
           }}
           modules={[Navigation, Pagination]}
