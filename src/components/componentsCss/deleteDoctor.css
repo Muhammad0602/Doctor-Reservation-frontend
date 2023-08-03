@@ -83,7 +83,7 @@
   }
 
   .deldoc-info {
-    width: 400px;
+    width: 500px;
     height: 200px;
   }
 
@@ -94,5 +94,21 @@
 
   .delete-btn {
     padding: 8px 15px;
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .deldoc-info {
+    width: 340px;
+  }
+  
+  .deldoc-info .photo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .delete-btn {
+    padding: 6px 10px;
   }
 }
