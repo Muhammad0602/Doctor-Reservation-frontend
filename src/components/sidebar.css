@@ -96,10 +96,11 @@ small {
     color: rgb(57, 57, 57);
     font-size: large;
     padding: 1rem;
+    position: fixed;
   }
 
-  .sidebar_container {
-    position: fixed;
+  .sidebar_container_items {
+    position: absolute;
     top: 0;
     left: 0;
     transition: 1s;
