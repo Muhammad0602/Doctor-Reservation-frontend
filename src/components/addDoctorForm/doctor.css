@@ -11,12 +11,13 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  height: 80vh;
+  height: 90vh;
 }
 
 .add-doctor-container h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 1rem;
+  font-weight: 500;
   position: absolute;
   text-align: center;
   top: 10px;
@@ -39,15 +40,15 @@
 .form-container form input,
 textarea {
   padding: 0.5rem;
-  margin: 0.5rem;
-  width: 96%;
+  margin: 0.5rem 0;
+  width: 100%;
   border-radius: 14px;
   border: 3px solid #ccc;
 }
 
 .form-container form button {
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   width: 100%;
   border-radius: 14px;
   background-color: #5fc50c;
@@ -61,16 +62,20 @@ textarea {
 }
 
 .icon {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  padding: 0;
   height: 250px;
   width: 400px;
-  padding: 0;
 }
 
 @media only screen and (max-width: 600px) {
   .icon {
-    display: none;
+    height: 170px;
+    width: 280px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .form-container {
+    width: 100%;
   }
 }

@@ -35,6 +35,7 @@ const DoctorForm = () => {
 
   return (
     <div className="form-container">
+      <embed src="https://lottie.host/?file=e508658a-d3ad-4854-9809-830fd303ce38/tAnKJn1r42.json" className="icon" />
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
         <input type="text" value={photo} onChange={(e) => setPhoto(e.target.value)} placeholder="Photo (URL)" />
