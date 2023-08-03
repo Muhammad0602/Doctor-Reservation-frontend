@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import { logout } from '../redux/users/userSlice';
+import logo from './assets/logo.png';
 import './sidebar.css';
 
 const Sidebar = () => {
@@ -34,7 +35,7 @@ const Sidebar = () => {
           <FaTimes />
         </button>
         <div className="sidebar_container-uperhead flex">
-          <div className="sidebar_container-logo">Logo</div>
+          <div className="sidebar_container-logo"><img src={logo} alt="logo" /></div>
           <div className="sidebar_container-list">
             <ul className="sidebar_list">
               <li className="sidebar-link">
@@ -111,7 +112,7 @@ const Sidebar = () => {
             </ul>
           </div>
         </div>
-        <div className="sidbar_footer flex">
+        <div className="sidbar_footer flex ">
           <div className="sidebar_socials flex">
             <FaTwitter />
             <FaFacebookF />

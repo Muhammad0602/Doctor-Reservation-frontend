@@ -12,6 +12,12 @@
   border-radius: 1rem;
 }
 
+.reservation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+}
+
 .reservation-info {
   flex-direction: column;
   width: 250px;
@@ -31,9 +37,16 @@
   object-fit: cover;
 }
 
+.reserve-details {
+  width: 100%;
+}
+
 @media (max-width: 600px) {
-  .reservation-page {
-    display: grid;
+  .reservation-list {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+

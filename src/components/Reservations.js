@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservations } from '../redux/reservations/reservationsSlice';
 import './reservation.css';
@@ -6,11 +6,6 @@ import './reservation.css';
 function Reservations() {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
-  const [time, setTime] = useState('');
-  
-
-
-  // const formattedTime = appointmentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   useEffect(() => {
     dispatch(getReservations());
@@ -33,15 +28,15 @@ function Reservations() {
   return (
     <div className="reservation-page">
       <h1 className="reserve-title">All the Reservations</h1>
-      <div className="d-flex">
+      <div className="reservation-list">
         {reservations.map((reservation) => (
           <div className="reservation-info flex m-2" key={reservation.id}>
             <img className="photo" src={reservation.photo} alt={reservation.name} />
-            <h2>
+            <h2 className="text-center">
               Dr.
               {reservation.doctor_name}
             </h2>
-            <div className="redetails">
+            <div className="reserve-details">
               <p>
                 <strong>Address:&ensp;</strong>
                 {reservation.city}
@@ -50,9 +45,11 @@ function Reservations() {
                 <strong>Date:&ensp;</strong>
                 {reservation.appointment_date}
               </p>
-              <p onClick={() => handleTime(reservation.appointment_time)}>
+              <p>
                 <strong>Time:&ensp;</strong>
-                {time}
+                {new Date(reservation.appointment_time).getHours()}
+                :
+                {new Date(reservation.appointment_time).getMinutes()}
               </p>
             </div>
           </div>
