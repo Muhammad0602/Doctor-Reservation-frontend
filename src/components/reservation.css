@@ -20,6 +20,12 @@
   overflow-x: hidden;
 }
 
+.reservation-imag {
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .reservation-info {
   flex-direction: column;
   width: 250px;
@@ -52,11 +58,27 @@
   .swiper-button-next {
     display: none;
   }
+
+  .photo {
+    width: 60%;
+  }
+
+  .reservation-imag {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 768px) {
   .reservation-page {
     width: 100%;
+  }
+
+  .reservation-imag {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .swiper-button-prev,

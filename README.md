@@ -1,40 +1,26 @@
-<a name="readme-top"></a>
+# Doctor Reservation frontend
 
-<div align="center">
+> Doctor Reservation frontend is react forntend application for doctor book appoinemnts. This applications is responsive and users can load, create, and delete doctors and reservations. Users need to sign up or sign in to access application. They can sign up or sign in using the sign up and login forms.
 
-  <h3><b>Doctor Reservation frontend</b></h3>
+## Link to the backend
 
-</div>
+[Book Appoinments Backend](https://github.com/Iqbal-Elham/Doctor-Reservation-backend)
 
-<!-- TABLE OF CONTENTS -->
+## Kanban Board
+[Kanban Board screenshot one]![image](https://github.com/Iqbal-Elham/Doctor-Reservation-backend/assets/113791476/4e688e40-5dbc-4109-81b6-b4a6b4a07239)
+[Kanban Board screenshot one]![image](https://github.com/Iqbal-Elham/Doctor-Reservation-backend/assets/113791476/228ec636-3d4f-4850-a014-28bc5fcac0db)
+[Kanban Board screenshot one]![image](https://github.com/Iqbal-Elham/Doctor-Reservation-backend/assets/113791476/81af277c-5b9c-487c-8847-77d651452131)
+[Kanban Board screenshot one]![image](https://github.com/Iqbal-Elham/Doctor-Reservation-backend/assets/113791476/b93fa94e-3ee2-4141-bb23-d69c0a6f0da7)
 
-# 📗 Table of Contents
+## Initial state of kanban board
+[Initial Kanban Board](https://github.com/users/Iqbal-Elham/projects/4)
 
-- [📗 Table of Contents](#-table-of-contents)
-- [📖 Doctors Reservation Backend ](#-Doctors-Reservation-Backend-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Setup database](#setup-database)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-  - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+> ***We are a group of four***
+1. Team 1 - [Mohammad Rafi Amin](https://github.com/mrkamin)
+2. Team 2 - [Ayomipo Majek](https://github.com/AyomipoMajek)
+3. Team 3 - [Muhammad Davlatov](https://github.com/Muhammad0602)
+4. Team 4 - [Iqbal Elham](https://github.com/Iqbal-Elham/Iqbal-Elham)
 
-<!-- PROJECT DESCRIPTION -->
-
-# 📖 Doctor Reservation frontend<a name="about-project"></a>
-
-**Doctor Reservation frontend** Doctor Reservation Frontend is a React app that serves as a front end to the Doctor Reservations project api with rails app. This an educational app for the purpose of Final group capstone. [Doctors Reservation backend](https://github.com/Iqbal-Elham/Doctor-Reservation-backend) project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
