@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  margin-top:  0 !important;
+  margin-top: 0 !important;
 }
 
 .reserve-title {
@@ -47,6 +47,7 @@
   .reservation-page {
     width: 100%;
   }
+
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
@@ -57,6 +58,7 @@
   .reservation-page {
     width: 100%;
   }
+
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
