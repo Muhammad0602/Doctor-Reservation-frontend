@@ -55,11 +55,13 @@ const Reservations = () => {
       >
         {reservations.map((reservation) => (
           <SwiperSlide className="reservation-info flex" key={reservation.id}>
-            <img className="photo" src={reservation.photo} alt={reservation.name} />
-            <h2 className="text-center">
-              Dr.
-              {reservation.doctor_name}
-            </h2>
+            <div className="reservation-imag flex">
+              <img className="photo" src={reservation.photo} alt={reservation.name} />
+              <h2 className="text-center">
+                Dr.
+                {reservation.doctor_name}
+              </h2>
+            </div>
             <div className="reserve-details">
               <p>
                 <strong>Address:&ensp;</strong>
