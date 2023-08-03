@@ -6,44 +6,64 @@
 
 .container-2 {
   padding: 20px;
+  background-color: white;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  margin: 1.1rem;
+}
+
+.container-2 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
 }
 
 .heading {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
   margin-top: 20px;
+  text-align: center;
+  background-color: #70be0d;
+  padding: 1rem;
+  color: white;
+  border-radius: 1rem;
 }
 
-.make-heading h2 {
-  font-size: 1.2rem;
+.container-2 form h2 {
+  font-size: 1.5rem;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
-.date,
-.time {
-  margin-bottom: 10px;
-}
-
-.date p,
-.time p {
-  margin-bottom: 5px;
-}
-
-.date input,
-.time input {
-  padding: 6px;
+.container-2 form input {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
   outline: none;
-  border-radius: 5px;
-  border: 1px solid #000;
+  background-color: #efeaea;
+}
+
+.select-container {
+  width: 100%;
 }
 
 .select-option {
-  height: 30px;
-  width: 8rem;
+  width: 100%;
+  padding: 1rem;
   margin-bottom: 20px;
   margin-top: 15px;
   outline: none;
   border-radius: 5px;
+  background-color: #efeaea;
+  border: none;
 }
 
 .r-btn {
@@ -53,7 +73,11 @@
   outline: none;
   border: none;
   text-align: center;
-  width: 5rem;
+  width: 100%;
+}
+
+.r-btn:hover {
+  background-color: #5ea008;
 }
 
 .rebtn {
@@ -63,40 +87,17 @@
   background: none;
   border: none;
   padding: 10px;
+  width: 100%;
 }
 
 /* for desktop */
 
-@media only screen and (min-width: 768px) {
-  .container-2 {
-    display: flex;
-    flex-direction: column;
-    margin: 40px;
+@media only screen and (max-width: 768px) {
+  .container-2 form {
+    width: 100%;
   }
 
-  .date,
-  .time {
-    margin-bottom: 20px;
-  }
-
-  .date input,
-  .time input {
-    padding: 12px;
-  }
-
-  .select-option {
-    height: 40px;
-    width: 11rem;
-    padding: 5px;
-  }
-
-  .r-btn {
-    padding: 6px;
-    width: 7rem;
-    margin-top: 20px;
-  }
-
-  .rebtn {
-    font-size: 1.4rem;
+  .heading {
+    font-size: 1.5rem;
   }
 }
