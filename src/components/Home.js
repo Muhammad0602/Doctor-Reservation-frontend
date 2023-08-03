@@ -39,7 +39,7 @@ const Home = () => {
       <Swiper
         navigation
         slidesPerView={1}
-        spaceBetween={60}
+        spaceBetween={30}
         pagination={{
           clickable: true,
         }}
