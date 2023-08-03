@@ -10,21 +10,6 @@ import 'swiper/css/navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './reservation.css';
 
-const formatAppointmentTime = (appointmentTime) => {
-  const date = new Date(appointmentTime);
-  const day = date.getDate();
-  const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December',
-  ];
-  const month = monthNames[date.getMonth()];
-  const year = date.getFullYear();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-  const second = date.getSeconds();
-
-  return `${day} ${month}, ${year} ${hour}:${minute}:${second}`;
-};
 const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
   const dispatch = useDispatch();
@@ -48,7 +33,8 @@ const Reservations = () => {
     );
   }
   return (
-    <div className="container py-4 px-4 justify-content-center">
+    <div className="reservation-page">
+      <h1 className="reserve-title">All the Reservations</h1>
       <Swiper
         navigation
         slidesPerView={1}
@@ -57,7 +43,13 @@ const Reservations = () => {
           clickable: true,
         }}
         breakpoints={{
+          1460: {
+            slidesPerView: 4,
+          },
           1024: {
+            slidesPerView: 3,
+          },
+          768: {
             slidesPerView: 2,
           },
           600: {
@@ -70,11 +62,25 @@ const Reservations = () => {
         {reservations.map((reservation) => (
           <SwiperSlide className="reservation-info flex" key={reservation.id}>
             <img className="photo" src={reservation.photo} alt={reservation.name} />
-            <h1>{reservation.doctor_name}</h1>
-            <div className="redetails">
-              <p>{reservation.city}</p>
-              <p>{reservation.appointment_date}</p>
-              <p>{formatAppointmentTime(reservation.appointment_time)}</p>
+            <h2 className="text-center">
+              Dr.
+              {reservation.doctor_name}
+            </h2>
+            <div className="reserve-details">
+              <p>
+                <strong>Address:&ensp;</strong>
+                {reservation.city}
+              </p>
+              <p>
+                <strong>Date:&ensp;</strong>
+                {reservation.appointment_date}
+              </p>
+              <p>
+                <strong>Time:&ensp;</strong>
+                {new Date(reservation.appointment_time).getHours()}
+                :
+                {new Date(reservation.appointment_time).getMinutes()}
+              </p>
             </div>
           </SwiperSlide>
         ))}

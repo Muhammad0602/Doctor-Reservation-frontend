@@ -1,10 +1,26 @@
-
-/* .reservation-page {
-  width: 100%;
-  justify-content: flex-start;
+.reservation-page {
+  width: 90%;
   padding: 1rem;
-  gap: 2rem;
-} */
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reserve-title {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 90%;
+  text-align: center;
+}
+
+.reservation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+}
 
 .reserve-title {
   background-color: white;

@@ -31,9 +31,7 @@ const Sidebar = () => {
         <FaBars />
       </button>
       <div ref={navRef} className="sidebar_container_items">
-
         <div className="sidebar_container flex">
-
           <button className="nav_btn nav_btn_close" type="button" onClick={showNavbar}>
             <FaTimes />
           </button>
