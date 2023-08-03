@@ -73,3 +73,14 @@ body {
 .error-message {
   color: red;
 }
+
+@media (max-width: 500px) {
+  .login-container {
+    background-color: white;
+    height: 70%;
+    width: 95%;
+    border-radius: 15px;
+    border: 1px solid #08ad08;
+  }
+}
+

@@ -4,12 +4,14 @@
   display: flex;
   flex-direction: column;
   justify-items: center;
+  align-items: center;
   overflow-y: auto;
   column-gap: 2rem;
   margin-top: 2rem;
 }
 
 .deldoc-info {
+  width: 320px;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 10px;
