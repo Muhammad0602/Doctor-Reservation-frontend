@@ -41,8 +41,8 @@ This app is build with React and Redux.
 > - The client can add a new doctor through the add new navigation link.
 > - The client can click on the delete doctor button from the naviagtion panel and see a list of all doctors which belongs to the current user with a "delete" button and then delete a particular doctor.
 > - The deleted doctors are removed from the home page.
-> - The login page where the client logs in to the website.
-> - The docctors details page is where the user can click on the "Reserve" button to reserve the doctor.
+> - The login page.
+> - The doctors details page is where the user can click on the "Reserve" button to reserve the doctor.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
